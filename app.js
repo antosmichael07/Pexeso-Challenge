@@ -8,6 +8,7 @@ var logger = require('morgan');
 
 var playRouter = require('./routes/play.js');
 var homeRouter = require('./routes/home.js');
+var createRouter = require('./routes/create.js');
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/play/', playRouter);
 app.use('/home/', homeRouter);
+app.use('/create/', createRouter);
 
 //--------------------------------------------------------------------------Inicializace rout--------------------------------------------------------------------------//
 
