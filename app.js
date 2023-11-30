@@ -3,20 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var handlebars = require('express-handlebars');
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
 var playRouter = require('./routes/play.js');
 var homeRouter = require('./routes/home.js');
+var rootRouter = require('./routes/root.js');
 var createRouter = require('./routes/create.js');
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
 var app = express();
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
+app.engine('handlebars', handlebars.engine());
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'handlebars');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -28,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/play/', playRouter);
 app.use('/home/', homeRouter);
+app.use('/', rootRouter);
 app.use('/create/', createRouter);
 
 //--------------------------------------------------------------------------Inicializace rout--------------------------------------------------------------------------//
