@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body h1{  
+    padding: 15px;
+    background: linear-gradient(to right, #8EB3F5, #72757a);
+}
+
+@keyframes text {
+    0%   {background-color:rgba(255, 0, 0, 0); left:-120%; top:0px;}
+    50%  {background-color:rgba(255, 0, 0, 0); left:120%; top:0px;}
+    100% {background-color:rgba(255, 0, 0, 0); left:0px; top:0px;}
+}
+
+div1 {
+    position: relative;
+    background-color: rgba(255, 0, 0, 0);
+    animation-name: text;
+    animation-duration: 3s;
+}
+
+.body{
+    font-family: Arial;
+    color: rgb(255, 255, 0);
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(to right, #72757a, #8EB3F5);
+    overflow-x: hidden;
+}
+
+.play_btn {
+    background: radial-gradient(circle, #8EB3F5 55%, #535559 80%);
+    border-radius: 100%;
+    border-style: calc(circle);
+    padding: 10px;
+    width: 100px;
+}
+
+/* Use for viweing formats:
+@media screen and (min-width: 767px) {
+    .banner{
+        display: block;
+        width: 100%;
+    }
+}
+*/
+
+@keyframes button {
+    0%   {background-color:rgba(255, 0, 0, 0); left:-120%; top:0px;}
+    50%   {background-color:rgba(255, 0, 0, 0); left:120%; top:0px;}
+    100% {background-color:rgba(255, 0, 0, 0); left:0px; top:0px;}
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgba(255, 0, 0, 0);
+    animation-name: button;
+    animation-duration: 4s;
+  }
+
+.body p{
+    margin: 10px;
+}
+
+.h1 {
+    transition: transform 2s;
+}
+
+.body:hover .h1{
+    transform: translateY(+425px);
+}
