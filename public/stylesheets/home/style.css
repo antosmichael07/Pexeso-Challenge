@@ -80,7 +80,7 @@ div1 {
   }
 
   @keyframes breathe {
-    50%   {transform: scaleX(1.3) scaleY(1.1);}
+    50%   {transform: scaleX(1.2) scaleY(1.2);}
     100% {transform: scaleX(1) scaleY(1);}
   }
 
