@@ -1,0 +1,92 @@
+/* Common styles */
+h1 {
+    font-family: Calibri;
+    text-align: center;
+    color: white;
+    margin-left: 0%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #43464d;
+    
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.a2 {
+    font-size: 16px;
+    border: none;
+    width: 40%;
+    margin-top: 30px;
+    margin-left: 100px;
+    color: #fff;
+    border: 0px solid #fff;
+    cursor: initial;
+    padding: 10%;
+    background-color: aquamarine;
+    height: 230px;
+}
+.a1{
+    
+    font-size: 16px;
+    border: none;
+    width: 60%;
+    margin-top: 30px;
+    margin-left: 10%;
+    color: #fff;
+    border: 0px solid #fff;
+    cursor: initial;
+    padding: 10%;
+    background-color: rgb(112, 184, 160);
+    height: 230px;
+}
+
+.create-room-btn,
+.join-room-btn {
+    width: 100px;
+    height: 50px;
+}
+
+.create-room-btn:hover,
+.join-room-btn:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.create-back {
+    width: 5%;
+    height: 5%;
+}
+
+
+.a1 img,
+.a2 img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
+@media screen {
+    .a1{
+        margin-left: 10%;
+        max-width: 15%;
+        padding: 10%; /* Adjust padding for desktop screens */
+    }
+    .a2 {
+        margin-left: 10%;
+        max-width: 15%;
+        padding: 10%; /* Adjust padding for desktop screens */
+    }
+    .create-room-btn,
+    .join-room-btn {
+        width: 100px;
+        height: 50px;
+        margin-left: 15%;
+        margin-top: 50%;
+    }
+}
