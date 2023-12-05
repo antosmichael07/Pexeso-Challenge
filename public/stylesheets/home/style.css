@@ -15,7 +15,7 @@
 
 .body h1{  
     padding: 15px;
-    background: linear-gradient(to right, #8EB3F5, #72757a);
+    background-color: #535559;
 }
 
 @keyframes text {
@@ -76,10 +76,5 @@ div1 {
     margin: 10px;
 }
 
-.h1 {
-    transition: transform 2s;
-}
 
-.body:hover .h1{
-    transform: translateY(+425px);
-}
+
