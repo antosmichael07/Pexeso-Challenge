@@ -11,6 +11,7 @@ var playRouter = require('./routes/play.js');
 var homeRouter = require('./routes/home.js');
 var rootRouter = require('./routes/root.js');
 var createRouter = require('./routes/create.js');
+var contactsRouter = require('./routes/contacts.js');
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
@@ -32,6 +33,7 @@ app.use('/play/', playRouter);
 app.use('/home/', homeRouter);
 app.use('/', rootRouter);
 app.use('/create/', createRouter);
+app.use('/contacts/', contactsRouter);
 
 //--------------------------------------------------------------------------Inicializace rout--------------------------------------------------------------------------//
 
