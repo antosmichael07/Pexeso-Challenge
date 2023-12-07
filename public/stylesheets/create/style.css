@@ -1,4 +1,4 @@
-/* Common styles */
+
 h1 {
     font-family: Calibri;
     text-align: center;
@@ -28,7 +28,7 @@ body {
     border: 0px solid #fff;
     cursor: initial;
     padding: 10%;
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
     height: 230px;
 }
 .a1{
@@ -42,12 +42,13 @@ body {
     border: 0px solid #fff;
     cursor: initial;
     padding: 10%;
-    background-color: rgb(112, 184, 160);
+    /*background-color: rgb(112, 184, 160);*/
     height: 230px;
 }
 
 .create-room-btn,
 .join-room-btn {
+    position: absolute;
     width: 100px;
     height: 50px;
 }
@@ -65,6 +66,7 @@ body {
 
 .a1 img,
 .a2 img {
+    position: absolute;
     max-width: 100%; /* Ensure images don't exceed container width */
     height: auto; /* Maintain aspect ratio */
 }
