@@ -3,9 +3,26 @@
     padding: 0;
 }
 
-.body h1{  
-    padding: 15px;
-    background: linear-gradient(to right, #8EB3F5, #72757a);
+/* 
+#43464d grey dark
+#535559 grey light
+#72757a grey lightest
+#b4c9f0 blue pastel
+#49679C blue dark
+#8EB3F5 blue light
+#D5DCE8 white-grey
+*/
+
+.h1{  
+    padding-top: 25px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.h2{
+    padding-top: 25px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 @keyframes text {
@@ -16,17 +33,17 @@
 
 div1 {
     position: relative;
-    background-color: rgba(255, 0, 0, 0);
+    background-color: #43464d00;
     animation-name: text;
     animation-duration: 3s;
 }
 
 .body{
     font-family: Arial;
-    color: rgb(255, 255, 0);
+    color: #8EB3F5;
     text-align: center;
     width: 100%;
-    background: linear-gradient(to right, #72757a, #8EB3F5);
+    background: linear-gradient(to bottom, #43464d, #535559, #43464d);
     overflow-x: hidden;
 }
 
@@ -62,14 +79,20 @@ div1 {
     animation-duration: 4s;
   }
 
+  @keyframes breathe {
+    50%   {transform: scaleX(1.2) scaleY(1.2);}
+    100% {transform: scaleX(1) scaleY(1);}
+  }
+
+  .play_btn {
+    animation-name: breathe;
+    animation: breathe 3500ms infinite forwards;
+  }
+
 .body p{
-    margin: 10px;
+    line-height: 30px;
+    margin: 25px;
 }
 
-.h1 {
-    transition: transform 2s;
-}
 
-.body:hover .h1{
-    transform: translateY(+425px);
-}
+
