@@ -62,7 +62,8 @@
 .h1{  
     padding-top: 25px;
     font-size: 50px;
-    font-family: "Calibri",'Times New Roman', Times, serif
+    font-family: "Calibri",'Times New Roman', Times, serif;
+    z-index: -1;
 }
 
 .h2{
@@ -138,6 +139,14 @@ div1 {
 .body p{
     line-height: 30px;
     margin: 25px;
+}
+
+.container {
+    /* CSS properties for the .container class */
+
+    position: relative;
+    bottom: 0;
+    z-index: -1;
 }
 
 
