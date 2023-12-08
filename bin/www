@@ -95,3 +95,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+console.log("Running on port 3000")
