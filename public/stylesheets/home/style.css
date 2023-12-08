@@ -16,13 +16,13 @@
 .h1{  
     padding-top: 25px;
     font-size: 50px;
-    font-family: 'Times New Roman', Times, serif
+    font-family: "Calibri",'Times New Roman', Times, serif
 }
 
 .h2{
     padding-top: 25px;
     font-size: 40px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:  "Calibri",'Times New Roman', Times, serif;
 }
 
 @keyframes text {
