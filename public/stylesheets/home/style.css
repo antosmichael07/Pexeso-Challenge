@@ -34,18 +34,18 @@
 }
 
 .bubbles span:nth-child(even){
-    background: #8EB3F5;
+    background: #b4c9f0;
     box-shadow: 0 0 0 10px #49679C,
-    0 0 50px #8EB3F5,
-    0 0 100px #8EB3F5;
+    0 0 50px #b4c9f0,
+    0 0 100px #b4c9f0;
 }
 
 .bubbles span:nth-child(odd){ 
     background-image: url('../../images/home/memorygames.png');
-    background-size: cover;
+    background-size: contain;
     box-shadow: 0 0 0 10px #49679C,
     0 0 50px #8EB3F5,
-    0 0 100px #43464d;
+    0 0 100px #8EB3F5;
 }
 
 @keyframes flip {
