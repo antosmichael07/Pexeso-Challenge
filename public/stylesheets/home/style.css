@@ -40,8 +40,8 @@
     0 0 100px #dc4f4f;
 }
 
-.bubbles span:nth-child(odd){
-    background: #4fc3dc;
+.bubbles span:nth-child(odd){ 
+    background-image: url('public\images\home\pexesobanner.png');
     box-shadow: 0 0 0 10px #409fb4,
     0 0 50px #4fc3dc,
     0 0 100px #4fc3dc;
@@ -91,7 +91,7 @@ div1 {
     text-align: center;
     width: 100%;
     background: linear-gradient(to bottom, #43464d, #535559, #43464d);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .play_btn {
