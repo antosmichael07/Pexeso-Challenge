@@ -34,17 +34,18 @@
 }
 
 .bubbles span:nth-child(even){
-    background: #dc4f4f;
-    box-shadow: 0 0 0 10px #4f1c1c,
-    0 0 50px #dc4f4f,
-    0 0 100px #dc4f4f;
+    background: #8EB3F5;
+    box-shadow: 0 0 0 10px #49679C,
+    0 0 50px #8EB3F5,
+    0 0 100px #8EB3F5;
 }
 
 .bubbles span:nth-child(odd){ 
-    background-image: url('public\images\home\pexesobanner.png');
-    box-shadow: 0 0 0 10px #409fb4,
-    0 0 50px #4fc3dc,
-    0 0 100px #4fc3dc;
+    background-image: url('../../images/home/memorygames.png');
+    background-size: cover;
+    box-shadow: 0 0 0 10px #49679C,
+    0 0 50px #8EB3F5,
+    0 0 100px #43464d;
 }
 
 @keyframes flip {
