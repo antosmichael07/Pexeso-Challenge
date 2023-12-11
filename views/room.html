@@ -2,12 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Play Pexeso Now!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/room/style.css">
+    <title>Room Page</title>
+    <link rel="stylesheet" href="stylesheets/room/style.css">
 </head>
+<body>
+    <div id="changing-background">
+        <div id="growing-rectangle"></div>
+    </div>
+
+    <div id="additional-content">
+
+        <h3>Your room code: </h2>
 
 
-<h2 class="code"> Your room code: </h2>
 
+    </div>
+
+    <script>
+    
+        document.addEventListener('DOMContentLoaded', function() {
+        var background = document.getElementById('changing-background');
+        var rectangle = document.getElementById('growing-rectangle');
+        var additionalContent = document.getElementById('additional-content');
+
+
+        setTimeout(function() {
+            background.style.backgroundColor = '#8EB3F5';
+            rectangle.style.width = '50px';
+            rectangle.style.height = '50px';
+            
+            setTimeout(function() {
+                rectangle.style.transform = 'translate(-50%, -50%) rotate(1080deg)';
+                rectangle.style.opacity = '0';
+            }, 1000);
+      
+            setTimeout(function() {
+                additionalContent.style.display = 'block';
+            }, 600);
+        }, 600);
+});
+
+
+
+    </script> 
+    
+
+</body>
 </html>
