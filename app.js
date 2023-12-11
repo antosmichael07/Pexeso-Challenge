@@ -10,8 +10,11 @@ var handlebars = require('express-handlebars');
 var playRouter = require('./routes/play.js');
 var homeRouter = require('./routes/home.js');
 var rootRouter = require('./routes/root.js');
-var createRouter = require('./routes/create.js');
+var chooseRouter = require('./routes/choose.js');
 var contactsRouter = require('./routes/contacts.js');
+var roomRouter = require('./routes/room.js')
+var joinRouter = require('./routes/join.js')
+var createRouter = require('./routes/create.js')
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
@@ -32,8 +35,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/play/', playRouter);
 app.use('/home/', homeRouter);
 app.use('/', rootRouter);
-app.use('/create/', createRouter);
+app.use('/choose/', chooseRouter);
 app.use('/contacts/', contactsRouter);
+app.use('/room/', roomRouter);
+app.use('/join/', joinRouter);
+app.use('/create/', createRouter);
 
 //--------------------------------------------------------------------------Inicializace rout--------------------------------------------------------------------------//
 

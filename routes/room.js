@@ -5,7 +5,7 @@ const fs = require("fs");
 router.use(express.static("public"));
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.send(fs.readFileSync("./views/create.html", "utf8"));
+  res.send(fs.readFileSync("./views/room.html", "utf8"));
 });
 
 module.exports = router;
