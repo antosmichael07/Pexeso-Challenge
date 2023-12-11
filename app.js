@@ -14,7 +14,7 @@ var chooseRouter = require('./routes/choose.js');
 var contactsRouter = require('./routes/contacts.js');
 var roomRouter = require('./routes/room.js')
 var joinRouter = require('./routes/join.js')
-var createRouter = require('./routes/create.js')
+
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
@@ -39,7 +39,7 @@ app.use('/choose/', chooseRouter);
 app.use('/contacts/', contactsRouter);
 app.use('/room/', roomRouter);
 app.use('/join/', joinRouter);
-app.use('/create/', createRouter);
+
 
 //--------------------------------------------------------------------------Inicializace rout--------------------------------------------------------------------------//
 
