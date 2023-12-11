@@ -124,6 +124,7 @@ div1 {
     background-color: rgba(255, 0, 0, 0);
     animation-name: button;
     animation-duration: 4s;
+    cursor: initial;
   }
 
   @keyframes breathe {
@@ -134,6 +135,7 @@ div1 {
   .play_btn {
     animation-name: breathe;
     animation: breathe 3500ms infinite forwards;
+    cursor: pointer;
   }
 
 .body p{
