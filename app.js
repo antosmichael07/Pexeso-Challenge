@@ -4,14 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var handlebars = require('express-handlebars');
+const fs = require("fs");
+
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
 var playRouter = require('./routes/play.js');
 var homeRouter = require('./routes/home.js');
 var rootRouter = require('./routes/root.js');
-var createRouter = require('./routes/create.js');
+var chooseRouter = require('./routes/choose.js');
 var contactsRouter = require('./routes/contacts.js');
+var roomRouter = require('./routes/room.js')
+var joinRouter = require('./routes/join.js')
+
 
 //--------------------------------------------------------------------Inicializace modulů pro routy--------------------------------------------------------------------//
 
@@ -32,8 +37,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/play/', playRouter);
 app.use('/home/', homeRouter);
 app.use('/', rootRouter);
-app.use('/create/', createRouter);
+app.use('/choose/', chooseRouter);
 app.use('/contacts/', contactsRouter);
+app.use('/room/', roomRouter);
+app.use('/join/', joinRouter);
+
 
 //--------------------------------------------------------------------------Inicializace rout--------------------------------------------------------------------------//
 
@@ -49,8 +57,9 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  //res.status(err.status || 500);
+  //res.render('error');¨
+  res.send(fs.readFileSync("./views/error.html", "utf8"))
 });
 
 module.exports = app;

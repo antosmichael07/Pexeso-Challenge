@@ -56,41 +56,49 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #43464d;
     overflow: hidden;
+<<<<<<< HEAD:public/stylesheets/create/style.css
     
+=======
+>>>>>>> eae08a083f5be23a070860b190e573df6b465eaa:public/stylesheets/choose/style.css
 }
 
 .images {
     display: flex;
     height: 100vh;
+<<<<<<< HEAD:public/stylesheets/create/style.css
     
+=======
+    width: 100%;
+    margin-left: 10%;
+>>>>>>> eae08a083f5be23a070860b190e573df6b465eaa:public/stylesheets/choose/style.css
 }
 
 .a2 {
     font-size: 16px;
     border: none;
-    width: 40%;
-    margin-top: 30px;
-    margin-left: 100px;
+    width: 20%;
+    
     color: #fff;
     border: 0px solid #fff;
     cursor: initial;
-    padding: 10%;
-    /*background-color: aquamarine;*/
-    height: 230px;
+    
+    
+    height: 100px;
+    position: relative;
 }
 .a1{
     
     font-size: 16px;
     border: none;
-    width: 60%;
-    margin-top: 30px;
-    margin-left: 10%;
+    width: 20%;
+    
     color: #fff;
     border: 0px solid #fff;
     cursor: initial;
-    padding: 10%;
-    /*background-color: rgb(112, 184, 160);*/
-    height: 230px;
+    
+    
+    height: 100px;
+    position: relative;
 }
 
 .create-room-btn,
@@ -111,25 +119,39 @@ body {
 }
 
 
-.a1 img,
-.a2 img {
+.a1 img {
+    margin-top: 30%;
+    margin-left: 20%;
     position: absolute;
-    max-width: 100%; /* Ensure images don't exceed container width */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 200%; 
+    height: auto; 
+    cursor: pointer;
+    
+    
+}
+.a2 img {
+    margin-top: 30%;
+    margin-left: 220%;
+    position: absolute;
+    max-width: 200%; 
+    height: auto; 
+    cursor: pointer;
+    
+    
 }
 
 
 
 @media screen {
     .a1{
-        margin-left: 10%;
+        
         max-width: 15%;
-        padding: 10%; /* Adjust padding for desktop screens */
+        
     }
     .a2 {
-        margin-left: 10%;
+        
         max-width: 15%;
-        padding: 10%; /* Adjust padding for desktop screens */
+        
     }
     .create-room-btn,
     .join-room-btn {
@@ -137,6 +159,7 @@ body {
         height: 50px;
         margin-left: 15%;
         margin-top: 50%;
+        position: relative;
     }
 }
 

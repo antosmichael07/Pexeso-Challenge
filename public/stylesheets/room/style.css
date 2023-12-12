@@ -1,0 +1,41 @@
+
+body {
+    margin: 0;
+    overflow: hidden;
+
+}
+
+#changing-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #43464d; 
+    transition: background-color 1s ease; 
+}
+
+#growing-rectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px; 
+    height: 5px; 
+    background-color: #8EB3F5;
+    transition: all 1s ease;
+}
+
+#additional-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 10%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 16px;
+    font-family: Arial;
+
+
+}
+
