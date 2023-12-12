@@ -8,6 +8,10 @@ router.get("/", function (req, res, next) {
   res.send(fs.readFileSync("./views/room.html", "utf8"));
 });
 
+router.post("/", function (req, res, next) {
+  res.send("bomba")
+})
+
 module.exports = router;
 
 
