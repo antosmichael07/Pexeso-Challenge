@@ -20,10 +20,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 5px; 
-    height: 5px; 
+    width: 0.001px; 
+    height: 0.001px; 
     background-color: #8EB3F5;
-    transition: all 1s ease;
+    transition: all 1.2s ease;
 }
 
 #additional-content {
