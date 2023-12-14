@@ -76,7 +76,7 @@ body {
 .user-icon {
     width: 100px;
     height: 100px;
-    background-image: url('./public/images/user.png');
+    background-image: url('images/room/user.png');
     background-size: cover;
     display: inline-block;
     margin: 5px; /* Add some margin between icons for spacing */
