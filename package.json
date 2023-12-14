@@ -15,5 +15,8 @@
     "morgan": "~1.9.1",
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
   }
 }
