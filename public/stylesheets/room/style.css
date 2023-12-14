@@ -27,49 +27,56 @@ body {
 
 #additional-content {
     display: none; /* Initially hidden */
-    position: absolute;
+    position: relative;
     margin-top: 5%;
     margin-left: 10%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 16px;
-    font-family: Arial;
+    
+    
 
 }
 
 
 #userIcons {
-    margin-left: 25%;
-    margin-top: 30%;
-    width: 30%;
+    padding-left: 0.8%;
+    margin-left: 5%;
+    margin-top: 25%;
+    width: 34%;
     min-height: 60vh; /* 40% of the viewport height */
     height: auto;
     border: 3px solid black;
     float: left;
+    transform: translateY(-60%);
+    
 }
 
 #userNames {
-    margin-left: 25%;
-    margin-top: 30%;
+    margin-left: 20%;
+    margin-top: 10%;
     
     width: 30%;
-    min-height: 45%; /* 25% of the viewport height */
+    min-height: 25vh;  
     height: auto;
-    border: 3px solid black;
     float: left;
+    border: 3px solid black;
+    
+    transform: translateX(-10%);
+    
 }
 
 #roomCode {
-    border: 3px solid black;
-    position: flex;
-    display: inline-block;
-    border-radius: 5px;
+    /*border: 2px solid black;
+    color: black;*/
+    font-size: 22px;
+    font-family: Arial;
+    margin-left: 70%;
+    
+
     
 }
 .user-icon {
     width: 100px;
     height: 100px;
-    background-image: url('./public/images/room/user.png');
+    background-image: url('./public/images/user.png');
     background-size: cover;
     display: inline-block;
     margin: 5px; /* Add some margin between icons for spacing */
