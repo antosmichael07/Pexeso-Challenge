@@ -145,3 +145,24 @@ table.table{
     border-radius: 5px;
 
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #b4c9f0;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #6990d2;    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #49679C;
+  }
+  
