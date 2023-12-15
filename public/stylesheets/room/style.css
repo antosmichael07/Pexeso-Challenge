@@ -4,7 +4,7 @@ body {
     overflow: hidden;
 }
 
-#changing-background {
+.changing-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@ body {
     transition: background-color 1s ease; 
 }
 
-#growing-rectangle {
+.growing-rectangle {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,7 +25,7 @@ body {
     transition: all 1.2s ease;
 }
 
-#additional-content {
+.additional-content {
     display: none; /* Initially hidden */
     position: relative;
     margin-top: 5%;
@@ -36,34 +36,42 @@ body {
 }
 
 
-#userIcons {
+.userIcons {
     padding-left: 0.8%;
     margin-left: 5%;
     margin-top: 25%;
     width: 34%;
     min-height: 60vh; /* 40% of the viewport height */
     height: auto;
-    border: 3px solid black;
+    border: 5px solid rgba(180, 201, 240, 0.05);
     float: left;
     transform: translateY(-60%);
+    background-color: rgba(180, 201, 240, 0.25);
+    border-radius: 40px;
     
 }
 
-#userNames {
-    margin-left: 20%;
-    margin-top: 10%;
+.userNames {
+    padding-left: 0.8%;
+    margin-left: 10%;
+    margin-top: 20%;
+    width: 34%;
+    max-height: 40vh;
+    min-height: 40vh; /* 40% of the viewport height */
+    overflow-y: scroll;
     
-    width: 30%;
-    min-height: 25vh;  
-    height: auto;
+    
+    border: 5px solid rgba(180, 201, 240, 0.05);
     float: left;
-    border: 3px solid black;
-    
-    transform: translateX(-10%);
+    transform: translateY(-60%);
+    background-color: rgba(180, 201, 240, 0.25);
+    border-radius: 40px;
+    font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 20px;
     
 }
 
-#roomCode {
+.roomCode {
     /*border: 2px solid black;
     color: black;*/
     font-size: 22px;
@@ -80,4 +88,60 @@ body {
     background-size: cover;
     display: inline-block;
     margin: 5px; /* Add some margin between icons for spacing */
+}
+
+.players {
+    font-size: 22px;
+    font-family: Arial;
+    margin-left: 3%;
+    margin-top: 5%;
+    color: black;
+   
+}
+.playerWins {
+    font-size: 22px;
+    font-family: Arial;
+    margin-left: 30%;
+    margin-top: -26%;
+    color: black;
+   
+}
+
+table.table{
+
+    width: 100%;
+    text-align: center;
+    }
+    table.none td, table.none th {
+    padding: 3px 2px;
+    }
+    table.none tbody td {
+    font-size: 13px;
+    }
+    table.none thead {
+        border-bottom: 2px solid #444444;
+    }
+    table.none thead th {
+    font-size: 15px;
+    font-weight: normal;
+    color: #000000;
+    }
+    table.none tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    }
+    table.none tfoot td {
+    font-size: 14px;
+    }
+    table.none tfoot .links {
+    text-align: right;
+    }
+    table.none tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+
 }
