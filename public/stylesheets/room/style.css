@@ -1,4 +1,5 @@
 
+
 body {
     margin: 0;
     overflow: hidden;
@@ -76,7 +77,7 @@ body {
     color: black;*/
     font-size: 22px;
     font-family: Arial;
-    margin-left: 70%;
+    margin-left: 100vh;
     
 
     
@@ -166,3 +167,35 @@ table.table{
     background: #49679C;
   }
   
+.headers{
+    display: flex;
+    
+}
+
+.yourRoom{
+    margin-left: 10vh;
+    
+    
+    font-family: Arial;
+    color: black;
+}
+
+.buttons{
+    margin-left: 10vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: Arial;
+    color: black;
+}
+.leaveRoom{
+    height: 10vh;
+    width: 10vh;
+    background: url('images/room/leave.png') no-repeat top left;
+    background-size: cover;
+    border: none;
+    
+}
+/*.leave{
+    max-width: 10vh;
+    max-height: 10vh;
+}*/

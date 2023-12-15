@@ -16,8 +16,10 @@
     </div>
 
     <div class="additional-content" id="additional-content">
-
-        <h3 class="roomCode">Your room code: </h3>
+        <div class="headers">
+            <h1 class="yourRoom">Your Room</h1>
+            <h3 class="roomCode">Your room code: </h3>
+        </div>
 
         <div class="userIcons">
             <img src="images/room/user.png" class="user-icon"> </img>
@@ -114,13 +116,22 @@
                     </tr>
                     </table>
                 </div>
-            
         </div>
-      
-        
+
+        <div class="buttons">
+            <button class="startGame">START
+            
+            </button>
+            <button class="leaveRoom">Leave
+            
+            </button>
+
+        </div>
 
     </div>
 
+
+    
 
     <script>
         // Adjust the height of the container based on the table content
@@ -128,7 +139,7 @@
             var container = document.getElementById('userNames');
             var tableHeight = document.getElementById('tableClass');
             container.style.height = tableHeight.style.height + 'px';
-            console.log('Container height after setting:', container.style.height);
+            
         }
         
         // Call the function when the page loads or whenever the content changes
