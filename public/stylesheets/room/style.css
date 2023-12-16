@@ -3,6 +3,7 @@
 body {
     margin: 0;
     overflow: hidden;
+    background-color: #8EB3F5;
 }
 
 .changing-background {
@@ -181,11 +182,12 @@ table.table{
 }
 
 .buttons{
-    margin-left: 10vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-left: 120vh;
+    margin-top: 60vh;
+    position: relative;
     font-family: Arial;
     color: black;
+    display: flex;
 }
 .leaveRoom{
     height: 10vh;
