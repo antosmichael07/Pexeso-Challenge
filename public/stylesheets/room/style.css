@@ -32,6 +32,7 @@ body {
     position: relative;
     margin-top: 5%;
     margin-left: 10%;
+    justify-content: space-around;
     
     
 
@@ -181,7 +182,38 @@ table.table{
     color: black;
 }
 
-.buttons{
+.aPlay{
+    max-width: 10vh;
+    max-height: 10vh;
+
+}
+
+.aLeave{
+    max-width: 10vh;
+    max-height: 10vh;
+    
+}
+
+.leave-icon{
+    margin-left: 40vh;
+    margin-bottom: 20vh;
+    display: block;
+
+}
+
+
+.aButtons{
+    max-width: 10vh;
+    max-height: 10vh;
+    display: flex;
+    margin-top: 0vh;
+    margin-right: 50vh;
+}
+
+
+
+
+/*.buttons{
     margin-left: 120vh;
     margin-top: 60vh;
     position: relative;
