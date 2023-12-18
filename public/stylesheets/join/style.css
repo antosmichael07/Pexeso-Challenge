@@ -1,0 +1,30 @@
+
+body {
+    
+    background: #D5DCE8;
+    display: "responsive";
+    
+}
+
+h1{
+    font-size: 50px;
+    font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    margin-left: 40.25%;
+    margin-top: 5%;
+
+}
+
+.input-field {
+    margin-top: 16%;
+    margin-left: 24.85%;
+    width: 50%;
+    height: 50px;
+    font-size: 40px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+
+        

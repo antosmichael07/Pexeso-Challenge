@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Join Room</title>
-    <link rel="stylesheet" type="text/css" href="css/join.css">
-    <link href="stylesheet" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room</title>
+    <link rel="stylesheet" href="stylesheets/join/style.css">
+
+
 
 </head>
 <body>
+    <h1>Join the Room</h1>
+
+
     <div class="container">
         <input type="text" class="input-field" placeholder="Enter room code">
         <div class="rectangle"></div>
         
         
     </div>
+
+    <div class="changing-background" id="changing-background">
+        <div class="growing-rectangle" id="growing-rectangle"></div>
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var background = document.getElementById('changing-background');
+            var rectangle = document.getElementById('growing-rectangle');
+            var additionalContent = document.getElementById('additional-content');
+
+
+            setTimeout(function () {
+                background.style.backgroundColor = '#8EB3F5';
+                rectangle.style.width = '6000px';
+                rectangle.style.height = '3000px';
+
+                setTimeout(function () {
+                    rectangle.style.transform = 'translate(-50%, -50%) rotate(1080deg)';
+                    rectangle.style.opacity = '0';
+                }, 1000);
+
+                setTimeout(function () {
+                    additionalContent.style.display = "block";
+                }, 200);
+            }, 800);
+        });
+
+
+
+    </script>
+
+
 </body>
 </html>
