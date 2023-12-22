@@ -6,10 +6,16 @@ module.exports = {
       io.emit("game:updated", game.toJson());
     });
 
-    socket.on("game:start", () => {
+    socket.on("game:start", (numberOfCards) => {
       if (!game.isRunning()) {
-        game.start();
+        game.start(numberOfCards);
         io.emit("game:updated", game.toJson());
+      }
+    });
+    
+    socket.on("game:flipCard", (i) => {
+      if (game.isRunning()) {
+        io.emit("game:card", game.returnCard(i));
       }
     });
 
@@ -18,6 +24,11 @@ module.exports = {
         game.end();
         io.emit("game:updated", game.toJson());
       }
+    });
+
+    socket.on("game:genCards", () => {
+      game.genCards();
+      io.emit("game:updated", game.toJson());
     });
   },
 };

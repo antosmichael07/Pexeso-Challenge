@@ -10,19 +10,32 @@
 
 </head>
 <body>
-    <h1>Join the Room</h1>
-
-
-    <div class="container">
-        <input type="text" class="input-field" placeholder="Enter room code">
-        <div class="rectangle"></div>
-        
-        
-    </div>
-
+    
     <div class="changing-background" id="changing-background">
         <div class="growing-rectangle" id="growing-rectangle"></div>
     </div>
+
+    <div class="additional-content" id="additional-content">
+        <h1>Join the Room</h1>
+
+
+        <div class="container">
+            <div class="rectangle"></div>
+            
+
+            <div class="gogo">
+                <input type="text" class="input-field" placeholder="Enter room code">
+                <a class="go">
+                    <img src="images/join/go.png" alt="go">
+                </a>
+            </div>
+            
+            
+        </div>
+
+       
+    </div>
+    
 
     <script>
 
@@ -34,8 +47,8 @@
 
             setTimeout(function () {
                 background.style.backgroundColor = '#8EB3F5';
-                rectangle.style.width = '6000px';
-                rectangle.style.height = '3000px';
+                rectangle.style.width = '100%';
+                rectangle.style.height = '100%';
 
                 setTimeout(function () {
                     rectangle.style.transform = 'translate(-50%, -50%) rotate(1080deg)';
