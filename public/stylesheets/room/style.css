@@ -177,7 +177,7 @@ table.table{
 .yourRoom{
     margin-left: 10vh;
     
-    
+    display: block;
     font-family: Arial;
     color: black;
 }
@@ -198,6 +198,7 @@ table.table{
     margin-left: 40vh;
     margin-bottom: 20vh;
     display: block;
+    
 
 }
 
@@ -206,12 +207,65 @@ table.table{
     max-width: 10vh;
     max-height: 10vh;
     display: flex;
-    margin-top: 0vh;
-    margin-right: 50vh;
+    margin-top: 60vh;
+    margin-left: 100vh;
+    position: absolute;
 }
 
+@media only screen and (max-width: 600px) {
+    .aButtons{
+        margin-top: 40vh;
+        margin-left: 30vh;
+        position: flex;
+        flex-direction: column;
+    }
+    .leave-icon{
+        margin-left: 10vh;
+        margin-top: 5vh;
+        display: block;
+    }
+    h1{
+        display:none !important;
+        color:transparent;
 
+    }
+}
 
+@media only screen and (max-width: 1240px) and (min-width: 1030px){
+    .aButtons{
+        margin-top: 55vh;
+        margin-left: 70vh;
+        position: absolute;
+        
+    }
+}
+@media only screen and (max-width: 1030px) and (min-width: 860px){
+    .aButtons{
+        margin-top: 50vh;
+        margin-left: 50vh;
+        position: absolute;
+        
+    }
+}
+
+@media only screen and (max-width: 860px) and (min-width: 600px){
+    .aButtons{
+        margin-top: 40vh;
+        margin-left: 60vh;
+        position: flex;
+        flex-direction: column;
+    }
+    .leave-icon{
+        margin-left: 10vh;
+        margin-top: 5vh;
+        display: block;
+    }
+    h1{
+        display:none !important;
+        color:transparent;
+
+    }
+}
 
 /*.buttons{
     margin-left: 120vh;
