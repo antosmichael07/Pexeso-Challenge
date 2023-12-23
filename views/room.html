@@ -11,7 +11,7 @@
 
 <body>
 
-    
+
 
     <div class="changing-background" id="changing-background">
         <div class="growing-rectangle" id="growing-rectangle"></div>
@@ -20,7 +20,7 @@
     <div class="additional-content" id="additional-content">
         <div class="headers">
             <h1 class="yourRoom">Your Room</h1>
-            <h3 class="roomCode">Your room code: 1mC0D3</h3>
+            <h3 class="roomCode" id="roomCode">Your room code:</h3>
         </div>
 
         <div class="userIcons">
@@ -247,7 +247,7 @@
             </div>
 
             <div class=aButtons>
-                <a href="/play" class="aPlay">
+                <a class="aPlay" onclick="clickedAPlay()">
                     <img src="images/room/start.png" class="play-icon"></img>
                 </a>
 
@@ -261,7 +261,9 @@
     </div>
 
 
-
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+        crossorigin="anonymous"></script>
 
     <script>
         // Adjust the height of the container based on the table content
@@ -307,7 +309,27 @@
 
     </script>
 
+    <script>
 
+        var code = "";
+        function clickedAPlay() {
+            window.location.href = "/play?code=" + code;
+        }
+
+    </script>
+
+    <script>
+
+        const socket = io();
+
+        socket.on("game:code", (resCode) => {
+            document.getElementById("roomCode").innerHTML = "Your room code: " + resCode;
+            code = resCode;
+        });
+
+        socket.emit("game:gen")
+
+    </script>
 
 </body>
 

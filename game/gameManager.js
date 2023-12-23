@@ -1,7 +1,5 @@
-const { Pexeso } = require("./Pexeso");
-
-const game = new Pexeso();
+const games = {}
 
 module.exports = {
-  game,
+  games,
 };

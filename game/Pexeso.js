@@ -15,15 +15,6 @@ class Pexeso {
     }
   }
 
-  end() {
-    this.#isRunning = false;
-  }
-
-  toJson() {
-    return {
-      isRunning: this.isRunning(),
-    };
-  }
   genCards(numberOfCards) {
     var possibleCards = [];
     for (let i = 0; i < numberOfCards / 2; i++) {

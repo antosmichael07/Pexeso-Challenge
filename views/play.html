@@ -20,41 +20,50 @@
 
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pexeso - Playing</title>
 </head>
+
 <body>
     <button onclick="startGame()">Start</button>
     <button onclick="endGame()">End</button>
 </body>
-<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"></script>
 <script>
-        let gameState = undefined;
 
-        const socket = io();
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code')
 
-        socket.on("connect", () => {
-            console.log("connected")
-            socket.emit("game:state")
-        });
+    let gameState = undefined;
 
-        socket.on("game:updated", (state) => {
-            gameState = state
-            console.log("game:updated", state)
-        });
+    const socket = io();
 
-        socket.on("game:card", (card) => {
-            console.log("game:card", card)
-        });
+    socket.on("connect", () => {
+        console.log("connected")
+        socket.emit("game:state")
+    });
 
-        function startGame(){
-            socket.emit("game:start", 16)
-        }
+    socket.on("game:updated", (state) => {
+        gameState = state
+        console.log("game:updated", state)
+    });
 
-        function endGame(){
-            socket.emit("game:end")
-        }
+    socket.on("game:card", (card) => {
+        console.log("game:card", card)
+    });
+
+    function startGame() {
+        socket.emit("game:start", 16)
+    }
+
+    function endGame() {
+        socket.emit("game:end")
+    }
 </script>
+
 </html>

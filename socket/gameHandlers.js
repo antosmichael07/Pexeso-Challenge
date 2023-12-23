@@ -1,18 +1,14 @@
-const { game } = require("../game/gameManager");
+const { games } = require("../game/gameManager");
+const { Pexeso } = require("../game/Pexeso");
 
 module.exports = {
   register: (io, socket) => {
-    socket.on("game:state", () => {
-      io.emit("game:updated", game.toJson());
-    });
-
     socket.on("game:start", (numberOfCards) => {
       if (!game.isRunning()) {
         game.start(numberOfCards);
-        io.emit("game:updated", game.toJson());
       }
     });
-    
+
     socket.on("game:flipCard", (i) => {
       if (game.isRunning()) {
         io.emit("game:card", game.returnCard(i));
@@ -22,13 +18,20 @@ module.exports = {
     socket.on("game:end", () => {
       if (game.isRunning()) {
         game.end();
-        io.emit("game:updated", game.toJson());
       }
     });
 
-    socket.on("game:genCards", () => {
-      game.genCards();
-      io.emit("game:updated", game.toJson());
+    socket.on("game:gen", () => {
+      var code = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for (var i = 0; i < 8; i++) {
+        code += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+      games[code] = new Pexeso();
+      io.emit("game:code", code);
+
+      console.log(games);
     });
   },
 };
