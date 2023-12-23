@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    overflow: hidden;
+    overflow: scroll;
     background-color: #8EB3F5;
 }
 
@@ -191,12 +191,13 @@ table.table{
 .aLeave{
     max-width: 10vh;
     max-height: 10vh;
+    margin-left: 40vh;
+    margin-bottom: 20vh;
     
 }
 
 .leave-icon{
-    margin-left: 40vh;
-    margin-bottom: 20vh;
+    
     display: block;
     
 
@@ -219,10 +220,10 @@ table.table{
         position: flex;
         flex-direction: column;
     }
-    .leave-icon{
+    .aLeave{
         margin-left: 10vh;
         margin-top: 5vh;
-        display: block;
+        
     }
     h1{
         display:none !important;
@@ -255,10 +256,10 @@ table.table{
         position: flex;
         flex-direction: column;
     }
-    .leave-icon{
+    .aLeave{
         margin-left: 10vh;
         margin-top: 5vh;
-        display: block;
+        
     }
     h1{
         display:none !important;
