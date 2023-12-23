@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    overflow: scroll;
+    overflow: hidden;
     background-color: #8EB3F5;
 }
 
