@@ -61,5 +61,9 @@ h1{
 }
 
 .go{
-    margin-top: 15%;
+    margin-top: 15.75%;
+}
+
+.gopng{
+    cursor: pointer;
 }
