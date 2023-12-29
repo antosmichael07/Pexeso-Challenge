@@ -213,6 +213,31 @@ table.table{
     position: absolute;
 }
 
+.settings{
+    max-width: 10vh;
+    max-height: 10vh;
+    margin-left: 85vh;
+    margin-top: 0vh;
+    position: absolute;
+    border: none;
+
+    
+}
+
+.settings-icon{
+    display: block;
+    max-width: 10vh;
+    max-height: 10vh;
+}
+.settings-icon:hover{
+    cursor: pointer;
+}
+
+.settings-button{
+    border: none;
+    background-color: transparent;
+}
+
 @media only screen and (max-width: 600px) {
     .aButtons{
         margin-top: 40vh;
