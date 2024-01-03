@@ -66,13 +66,15 @@
     </script>
 
     <script>
+        var code = "";
+        
         const idInput = document.getElementById("input");
         idInput.addEventListener("input", (e) => {
             const {value} = e.target
             console.log(value)
+            code += value
         })
         
-        var code = "";
         function clickedAPlay() {
             window.location.href = "/play?code=" + code;
         }
