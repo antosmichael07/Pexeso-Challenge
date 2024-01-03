@@ -24,7 +24,7 @@
             
 
             <div class="gogo">
-                <input type="text" class="input-field" placeholder="Enter room code">
+                <input type="text" class="input-field" placeholder="Enter room code" id="input">
                 <a class="go">
                     <img src="images/join/go.png" alt="go" class="gopng">
                 </a>
@@ -63,6 +63,19 @@
 
 
 
+    </script>
+
+    <script>
+        const idInput = document.getElementById("input");
+        idInput.addEventListener("input", (e) => {
+            const {value} = e.target
+            console.log(value)
+        })
+        
+        var code = "";
+        function clickedAPlay() {
+            window.location.href = "/play?code=" + code;
+        }
     </script>
 
 
