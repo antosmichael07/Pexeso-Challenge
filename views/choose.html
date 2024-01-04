@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Play Pexeso Now!</title>
@@ -10,7 +11,7 @@
 <body>
     <h1>Play Pexeso Now!</h1>
 
-    
+
     <div class="container">
         <div class="bubbles-flip">
             <div class="bubbles">
@@ -51,7 +52,7 @@
 
 
     <div class="images">
-        <a href="/room" class="a1">
+        <a class="a1" onclick="clickedCreate()">
             <img src="images/create/create1.png" class="create1" id="create_img">
             <!-- <img src="images/create/create.png" class="create-room-btn" id="create_img"> -->
         </a>
@@ -61,10 +62,27 @@
         </a>
     </div>
 
-    
+
     <img src="images/create/create-back.png" class="create-back">
-    
-    
 
 </body>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"></script>
+
+<script>
+
+    const socket = io()
+
+    socket.on("game:code", (resCode) => {
+        window.location.href = "/room?code=" + resCode;
+    });
+
+    function clickedCreate() {
+
+        socket.emit("game:gen")
+
+    }
+</script>
+
 </html>
