@@ -1,30 +1,61 @@
 .board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  .card {
-    background-color: #4CAF50;
-    width: 100px;
-    height: 100px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .hidden {
-    background-color: #333;
-    color: #333;
-  }
-  
-  .matched {
-    background-color: #999;
-    color: #999;
-    pointer-events: none;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.card {
+  background-color: #4CAF50;
+  width: 100px;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hidden {
+  background-color: #333;
+  color: #333;
+}
+
+.matched {
+  background-color: #999;
+  color: #999;
+  pointer-events: none;
+}
+
+
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#game-container {
+  width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#player-list {
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#player-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#player-list li {
+  margin-bottom: 10px;
+}

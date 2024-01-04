@@ -22,18 +22,13 @@
         <div class="container">
             <div class="rectangle"></div>
             
-
             <div class="gogo">
                 <input type="text" class="input-field" placeholder="Enter room code" id="input">
                 <a class="go">
                     <img src="images/join/go.png" alt="go" class="gopng">
                 </a>
             </div>
-            
-            
         </div>
-
-       
     </div>
     
 
@@ -72,11 +67,11 @@
         idInput.addEventListener("input", (e) => {
             const {value} = e.target
             console.log(value)
-            code += value
+            code = value
         })
         
         function clickedAPlay() {
-            window.location.href = "/play?code=" + code;
+            window.location.href = "/room?code=" + code;
         }
     </script>
 
