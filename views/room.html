@@ -170,12 +170,16 @@
 
         // Initial update when the page loads
         socket.emit('getInitialData', code);
+        socket.on('initialData', (initialData) => {
+            const { players, playerIcons } = initialData;
+            socket.emit('updatePlayerList', players);
+            socket.emit('updatePlayerIcons', playerIcons);
+        });
+
     });
 
     // Other scripts...
 </script>
-
-
 
 </body>
 
