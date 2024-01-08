@@ -1,61 +1,38 @@
-.board {
+/* Add your CSS styles here */
+#game-board {
+  border: 1px solid blue;
+  padding: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  max-width: 600px;
-  margin: auto;
-}
+  grid-template-columns: repeat(6, 20%);
+  grid-gap: 5px;
 
+  margin-left: 5%;
+  margin-top: 0%;
+  float: left;
+}
 .card {
-  background-color: #4CAF50;
-  width: 100px;
-  height: 100px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 15%;
+  width: 14vh;
+  height: 14vh;
+  line-height: 50px;
+  margin-top: 10px;
+  
+  background-color: lightgray;
 }
-
-.hidden {
-  background-color: #333;
-  color: #333;
+#players-list {
+  border: 1px solid green;
+  
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  
+  text-align: center;
+  font-size: 30px;
+  margin-left: 70%;
+  margin-top: 5%;
+  max-width: 20%;
 }
-
-.matched {
-  background-color: #999;
-  color: #999;
-  pointer-events: none;
-}
-
-
 body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-#game-container {
-  width: 60%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-#player-list {
-  width: 30%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-#player-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#player-list li {
-  margin-bottom: 10px;
+  background-color: azure;
+  font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
