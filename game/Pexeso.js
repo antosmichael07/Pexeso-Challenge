@@ -2,7 +2,9 @@ class Pexeso {
   #isRunning = false;
   #cards = [];
 
-  constructor() {}
+  constructor() {
+    this.numberOfPlayersWaiting = 0;
+  }
 
   isRunning() {
     return this.#isRunning;

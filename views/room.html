@@ -133,6 +133,7 @@
     </script>
 
 <script>
+    var numberOfPlayers = 0
     document.addEventListener('DOMContentLoaded', () => {
         const socket = io(); // Connect to the Socket.IO server
 
@@ -140,6 +141,14 @@
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
         document.getElementById('roomCode').innerText = `Your room code: ${code}`;
+        
+        socket.on("room:updatePlayerCount", (value, roomCode) => {
+            if (roomCode == code) {
+                numberOfPlayers = value
+            }
+        });
+
+        socket.emit('game:join', code)
 
         // Replace with your logic to handle player list updates
         socket.on('updatePlayerList', (players) => {
