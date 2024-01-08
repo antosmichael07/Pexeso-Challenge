@@ -60,8 +60,21 @@
 
     </script>
 
+    <script 
+    src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous">
+    </script>
+
     <script>
         var code = "";
+        const socket = io();
+        var playerCode = "";
+
+        var possible = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (var i = 0; i < 32; i++) {
+            playerCode += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
         
         const idInput = document.getElementById("input");
         idInput.addEventListener("input", (e) => {
@@ -69,9 +82,17 @@
             console.log(value)
             code = value
         })
+
+        socket.on("join:isGameExistReturn", (value, playerCodeFromServer) => {
+            if (value == "yes") {
+                window.location.href = "/room?code=" + code;
+            } else if (playerCodeFromServer == playerCode) {
+                alert("Game not found");
+            }
+        });
         
         function clickedAPlay() {
-            window.location.href = "/room?code=" + code;
+            socket.emit("join:isGameExist", code, playerCode);
         }
     </script>
 

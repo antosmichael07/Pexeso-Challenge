@@ -23,15 +23,32 @@ module.exports = {
 
     socket.on("game:gen", () => {
       var code = "";
-      var possible = "0123456789";
-
-      for (var i = 0; i < 6; i++) {
-        code += possible.charAt(Math.floor(Math.random() * possible.length));
-      }
+      do {
+        var possible = "0123456789";
+  
+        for (var i = 0; i < 6; i++) {
+          code += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+      } while (games[code])
       games[code] = new Pexeso();
       io.emit("game:code", code);
 
       console.log(games);
+    });
+
+    socket.on("game:join", (code) => {
+      if (games[code]) {
+        games[code].numberOfPlayersWaiting++
+        io.emit("room:updatePlayerCount", games[code].numberOfPlayersWaiting, code);
+      }
+    });
+
+    socket.on("join:isGameExist", (code, playerCode) => {
+      if (games[code]) {
+        io.emit("join:isGameExistReturn", "yes", playerCode);
+      } else {
+        io.emit("join:isGameExistReturn", "no", playerCode);
+      }
     });
   },
 };
