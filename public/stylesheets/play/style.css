@@ -1,14 +1,9 @@
 /* Add your CSS styles here */
 #game-board {
   border: 1px solid blue;
-  padding: 10px;
   display: grid;
-  grid-template-columns: repeat(6, 20%);
-  grid-gap: 5px;
-
-  margin-left: 5%;
-  margin-top: 0%;
-  float: left;
+  grid-template-columns: repeat(6, 15%);
+  margin-top: 5%;
 }
 .card {
   border: 2px solid grey;
@@ -20,6 +15,10 @@
   
   background-color: lightgray;
 }
+.card:hover {
+  background-color: lightblue;
+}
+
 #players-list {
   border: 1px solid green;
   
@@ -28,11 +27,60 @@
   
   text-align: center;
   font-size: 30px;
-  margin-left: 70%;
-  margin-top: 5%;
-  max-width: 20%;
+  
 }
 body {
   background-color: azure;
   font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+#timer {
+  width: 200px; /* adjust as needed */
+  height: 50px; /* adjust as needed */
+  border: 1px solid black; /* adjust as needed */
+
+}
+.rightBlock{
+  width:20%;
+
+
+}
+
+@media only screen and (min-width: 1280px){
+  #game-board {
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(7, 15%);
+    
+  }
+
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px){
+  #game-board {
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(5, 18%);
+    
+  }
+
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 760px){
+  #game-board {
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(5, 22%);
+    
+  }
+
+}
+
+@media only screen and (max-width: 759px) and (min-width: 500px){
+  #game-board {
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(4, 28%);
+    
+  }
+
 }
