@@ -13,52 +13,87 @@
 
 <body>
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-8">
-            <!-- left block -->
+        <div class="row">
+            <div class="col-sm-8">
+                <!-- left block -->
                 <div id="game-board">
                     <!-- Game cards will be generated here -->
                 </div>
-                
+                    
                 <div id="current-player">
-                    <!-- Current player will be displayed here -->
+                        <!-- Current player will be displayed here -->
                 </div>
             </div>
-        
-        
-        <div class="col-sm-4">
-        <!-- right block -->
-            <div id="timer">
-                <!-- Timer will be displayed here -->
-            </div>
-
             
-            <div id="players-list" class="players-list">
-                <!-- List of players will be displayed here -->
-                <div id="player1">
-                    Player 1
-                    0
+            
+            <div class="col-sm-4">
+                <!-- right block -->
+                <div id="timer">
+                    <div id="progress"></div>
+                    <span id="time-left"></span>
                 </div>
-                <div id="player2">
-                    UndestructableCrab
-                    0
-                </div>
-                <div id="player3">
-                    Giga
-                    0
-                </div>
-                <div id="player4">
-                    Nega
-                    0
-                </div>
-                <div id="player5">
-                    iAMtwelve
-                    0 <!-- number of guessed matching cards-->
+                <div id="players-list" class="players-list">
+                    <!-- List of players will be displayed here -->
+                    <div id="player1">
+                        Player 1
+                        0
+                    </div>
+                    <div id="player2">
+                        UndestructableCrab
+                        0
+                    </div>
+                    <div id="player3">
+                        Giga
+                        0
+                    </div>
+                    <div id="player4">
+                        Nega
+                        0
+                    </div>
+                    <div id="player5">
+                        iAMtwelve
+                        0 <!-- number of guessed matching cards-->
+                    </div>
                 </div>
             </div>
         </div> 
     </div>
-    </div>
+    <script>
+        function startTimer(duration, progressElement, textElement) {
+var start = Date.now(),
+progress;
+
+function timer() {
+// get the number of seconds that have elapsed since startTimer() was called
+var diff = duration - (((Date.now() - start) / 1000) | 0);
+
+// calculate the width of the progress bar
+var percent = (diff / duration) * 100;
+
+// update the width of the progress bar
+progressElement.style.width = percent + '%';
+
+// update the text content of the #time-left element
+textElement.textContent = diff + "s";
+
+// if all the time has passed, end the timer
+if (diff <= 0) {
+clearInterval(progress);
+}
+};
+
+// we don't want to wait a full second before the timer starts
+timer();
+progress = setInterval(timer, 10);
+}
+
+window.onload = function () {
+var tenSecs = 60 / 6,
+progressElement = document.querySelector('#progress'),
+textElement = document.querySelector('#time-left');
+startTimer(tenSecs, progressElement, textElement);
+};
+    </script>
     <script 
         src="https://cdn.socket.io/4.6.0/socket.io.min.js"
         integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
@@ -173,5 +208,7 @@
             socket.emit("game:end")
         }
     </script>
+
+
 
 </html>

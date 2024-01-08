@@ -14,15 +14,17 @@
   height: 14vh;
   line-height: 50px;
   margin-top: 10px;
-  
-  background-color: lightgray;
+  background-image: url("./images/play/Remantelogo2.png");
+  background-size: cover;
 }
 .card:hover {
   background-color: lightblue;
 }
 
 #players-list {
-  border: 1px solid green;
+  width: 550PX;
+  border: 1px solid rgb(228, 217, 19);
+  border-radius: 50px;
   
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -31,21 +33,49 @@
   font-size: 30px;
   
 }
+
 body {
-  background-color: azure;
+  background-color: #506069;
   font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
   overflow-x: hidden;
 }
+
+.col-sm-4 {
+  display: block;
+  margin-top: 4%;
+  padding-left: 2%;
+}
+
 #timer {
-  width: 200px; /* adjust as needed */
-  height: 50px; /* adjust as needed */
+  width: 500px; /* adjust as needed */
+  height: 25px; /* adjust as needed */
   border: 1px solid black; /* adjust as needed */
+  border-radius: 100px;
+  margin-bottom: 1px;
+  margin-left: 4%;
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#time-left {
+  position: absolute;
+}
+
+#progress {
+  position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #24C586; /* change color as needed */
 
 }
+
 .rightBlock{
   width:20%;
-
-
 }
 
 @media only screen and (min-width: 1280px){
