@@ -1,4 +1,6 @@
 /* Add your CSS styles here */
+
+
 #game-board {
   border: 1px solid blue;
   display: grid;
@@ -32,6 +34,7 @@
 body {
   background-color: azure;
   font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  overflow-x: hidden;
 }
 #timer {
   width: 200px; /* adjust as needed */
