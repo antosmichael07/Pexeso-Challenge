@@ -42,6 +42,12 @@ module.exports = {
         io.emit("room:updatePlayerCount", games[code].numberOfPlayersWaiting, code);
       }
     });
+    socket.on("game:disconnect", (code) => {
+      if (games[code]) {
+        games[code].numberOfPlayersWaiting--
+        io.emit("room:updatePlayerCount", games[code].numberOfPlayersWaiting, code);
+      }
+    });
 
     socket.on("join:isGameExist", (code, playerCode) => {
       if (games[code]) {

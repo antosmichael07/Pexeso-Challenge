@@ -23,10 +23,7 @@
             <h3 class="roomCode" id="roomCode">Your room code:</h3>
         </div>
 
-        <div class="userIcons">
-            <img src="images/room/user.png" class="user-icon"> </img>
-            <img src="images/room/user.png" class="user-icon"></img>
-            <img src="images/room/user.png" class="user-icon"></img>
+        <div class="userIcons" id="userIcons">
             
 
         </div>
@@ -145,6 +142,10 @@
         socket.on("room:updatePlayerCount", (value, roomCode) => {
             if (roomCode == code) {
                 numberOfPlayers = value
+                document.getElementById("userIcons").innerHTML = ""
+                for (let i = 0; i < numberOfPlayers; i++) {
+                    document.getElementById("userIcons").innerHTML += '<img src="images/room/user.png" class="user-icon"></img>'
+                }
             }
         });
 
