@@ -60,39 +60,39 @@
     </div>
     <script>
         function startTimer(duration, progressElement, textElement) {
-var start = Date.now(),
-progress;
+        var start = Date.now(),
+        progress;
 
-function timer() {
-// get the number of seconds that have elapsed since startTimer() was called
-var diff = duration - (((Date.now() - start) / 1000) | 0);
+        function timer() {
+        // get the number of seconds that have elapsed since startTimer() was called
+        var diff = duration - (((Date.now() - start) / 1000) | 0);
 
-// calculate the width of the progress bar
-var percent = (diff / duration) * 100;
+        // calculate the width of the progress bar
+        var percent = (diff / duration) * 100;
 
-// update the width of the progress bar
-progressElement.style.width = percent + '%';
+        // update the width of the progress bar
+        progressElement.style.width = percent + '%';
 
-// update the text content of the #time-left element
-textElement.textContent = diff + "s";
+        // update the text content of the #time-left element
+        textElement.textContent = diff + "s";
 
-// if all the time has passed, end the timer
-if (diff <= 0) {
-clearInterval(progress);
-}
-};
+        // if all the time has passed, end the timer
+        if (diff <= 0) {
+        clearInterval(progress);
+        }
+        };
 
-// we don't want to wait a full second before the timer starts
-timer();
-progress = setInterval(timer, 10);
-}
+        // we don't want to wait a full second before the timer starts
+        timer();
+        progress = setInterval(timer, 10);
+        }
 
-window.onload = function () {
-var tenSecs = 60 / 6,
-progressElement = document.querySelector('#progress'),
-textElement = document.querySelector('#time-left');
-startTimer(tenSecs, progressElement, textElement);
-};
+        window.onload = function () {
+        var tenSecs = 60 / 6,
+        progressElement = document.querySelector('#progress'),
+        textElement = document.querySelector('#time-left');
+        startTimer(tenSecs, progressElement, textElement);
+        };
     </script>
     <script 
         src="https://cdn.socket.io/4.6.0/socket.io.min.js"
@@ -147,7 +147,7 @@ startTimer(tenSecs, progressElement, textElement);
 
         
         // Index of the current player
-        var currentPlayerIndex = 0;
+        var currentPlayerIndex = -1;
 
         // Function to switch to the next player
         function nextPlayer() {
@@ -162,6 +162,9 @@ startTimer(tenSecs, progressElement, textElement);
             // Increment the index
             currentPlayerIndex++;
 
+            // Change the font color of the current player to orange
+            players[currentPlayerIndex].style.color = 'Lightgreen';
+
             // If we've reached the end of the array, go back to the start
             if (currentPlayerIndex >= players.length) {
                 currentPlayerIndex = 0;
@@ -170,8 +173,7 @@ startTimer(tenSecs, progressElement, textElement);
             // Update the current player
             currentPlayer = players[currentPlayerIndex].id;
 
-            // Change the font color of the current player to orange
-            players[currentPlayerIndex].style.color = 'Lightgreen';
+            
         }
 
         // Switch to the next player every 10 seconds

@@ -14,12 +14,12 @@
   height: 14vh;
   line-height: 50px;
   margin-top: 10px;
-  background-image: url('../../images/play/RemanteWhite.jpg');
+  background-image: url('../../images/play/testRem2.png');
   background-size: cover;
 }
 
 .card:hover {
-  background-image: url('../../images/play/Remante.jpg');
+  background-image: url('../../images/play/testRem3.png');
 }
 
 #players-list {
