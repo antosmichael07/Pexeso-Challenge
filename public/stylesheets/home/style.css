@@ -3,6 +3,21 @@
     padding: 0;
 }
 
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height:  10vh;
+    background-color: #1a1917;
+    color: #269537;
+    text-align: center;
+    font-size: 50px;
+    font-family: "Calibri",'Times New Roman', Times, serif;
+    z-index: 1;
+} 
+   
+
+
 /**********************************
 Black Remante
 .............
@@ -40,13 +55,13 @@ White Remante
 .bubbles span:nth-child(even){
     background-image: url('../../images/play/Remante.jpg');
     background-size: cover;
-    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+    box-shadow: 0 0 10px #25C587, 0 0 20px #25C587, 0 0 30px #25C587, 0 0 40px #25C587;
 }
 
 .bubbles span:nth-child(odd){ 
     background-image: url('../../images/play/RemanteWhite.jpg');
     background-size: cover;
-    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+    box-shadow: 0 0 10px #25C587, 0 0 20px #25C587, 0 0 30px #25C587, 0 0 40px #25C587;
 }
 
 @keyframes flip {
@@ -60,13 +75,6 @@ White Remante
 
 /*/////////////////////////////////////////////////////////////////////////*/
 
-
-.h1{  
-    font-size: 50px;
-    font-family: "Calibri",'Times New Roman', Times, serif;
-    z-index: -1;
-}
-
 .h2{
     padding-top: 25px;
     font-size: 40px;
@@ -79,7 +87,7 @@ White Remante
     100% {background-color:rgba(255, 0, 0, 0); left:0px; top:0px;}
 }
 
-div1 {
+.div1 {
     position: relative;
     background-color: #43464d00;
     animation-name: text;
@@ -116,9 +124,9 @@ div1 {
     0%   {background-color:rgba(255, 0, 0, 0); left:-120%; top:0px;}
     50%   {background-color:rgba(255, 0, 0, 0); left:120%; top:0px;}
     100% {background-color:rgba(255, 0, 0, 0); left:0px; top:0px;}
-  }
+}
 
-  a {
+a {
     width: 100%;
     height: 100%;
     position: relative;
@@ -126,31 +134,40 @@ div1 {
     animation-name: button;
     animation-duration: 4s;
     cursor: initial;
-  }
+}
 
-  @keyframes breathe {
+@keyframes breathe {
     50%   {transform: scaleX(1.2) scaleY(1.2);}
     100% {transform: scaleX(1) scaleY(1);}
-  }
+}
 
-  .play_btn {
+.play_btn {
     animation-name: breathe;
     animation: breathe 3500ms infinite forwards;
     cursor: pointer;
-  }
+}
 
-.body p{
+.body p {
     line-height: 30px;
     margin: 25px;
 }
 
 .container {
-    /* CSS properties for the .container class */
-
     position: relative;
     bottom: 0;
     z-index: -1;
 }
 
+ .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #1a1917;
+    color: #269537;
+    text-align: center;
+    z-index: -1;
+}
 
 
