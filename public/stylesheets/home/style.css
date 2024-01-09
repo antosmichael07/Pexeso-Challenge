@@ -3,19 +3,7 @@
     padding: 0;
 }
 
-/*//////////////////// 
-#43464d grey dark
-#535559 grey light
-#72757a grey lightest
-#b4c9f0 blue pastel
-#49679C blue dark
-#8EB3F5 blue light
-#D5DCE8 white-grey
-//////////////////*/
-
-/*////////////////////////////////////////////////////////////////////////////*/
-
-.conatiner{
+.container{
     width: 100%;
     height: 100%;
 }
@@ -26,26 +14,21 @@
 
 .bubbles span {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 75.5px;
+    height: 75.5px;
     border-radius: 0%;
     animation: flip linear infinite;
     animation-duration: calc(125s / var(--i));
 }
 
 .bubbles span:nth-child(even){
-    background: #b4c9f0;
-    box-shadow: 0 0 0 10px #49679C,
-    0 0 50px #b4c9f0,
-    0 0 100px #b4c9f0;
+    background-image: url('../../images/play/Remante.jpg');
+    background-size: cover;
 }
 
 .bubbles span:nth-child(odd){ 
-    background-image: url('../../images/home/memorygames.png');
-    background-size: contain;
-    box-shadow: 0 0 0 10px #49679C,
-    0 0 50px #8EB3F5,
-    0 0 100px #8EB3F5;
+    background-image: url('../../images/play/RemanteWhite.jpg');
+    background-size: cover;
 }
 
 @keyframes flip {

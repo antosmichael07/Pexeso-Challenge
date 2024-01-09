@@ -2,28 +2,29 @@
 
 
 #game-board {
-  border: 1px solid blue;
+  border: 1px solid rgb(0, 255, 4);
   display: grid;
   grid-template-columns: repeat(6, 15%);
   margin-top: 5%;
 }
 .card {
-  border: 2px solid grey;
+  border: 2px solid #131514;
   border-radius: 15%;
   width: 14vh;
   height: 14vh;
   line-height: 50px;
   margin-top: 10px;
-  background-image: url("./images/play/Remantelogo2.png");
+  background-image: url('../../images/play/RemanteWhite.jpg');
   background-size: cover;
 }
+
 .card:hover {
-  background-color: lightblue;
+  background-image: url('../../images/play/Remante.jpg');
 }
 
 #players-list {
   width: 550PX;
-  border: 1px solid rgb(228, 217, 19);
+  border: 1px solid rgb(247, 247, 247);
   border-radius: 50px;
   
   display: grid;
@@ -80,7 +81,7 @@ body {
 
 @media only screen and (min-width: 1280px){
   #game-board {
-    border: 1px solid blue;
+    border: 1px solid rgb(26, 255, 0);
     display: grid;
     grid-template-columns: repeat(7, 15%);
     
@@ -90,7 +91,7 @@ body {
 
 @media only screen and (max-width: 1200px) and (min-width: 1000px){
   #game-board {
-    border: 1px solid blue;
+    border: 1px solid rgb(0, 255, 38);
     display: grid;
     grid-template-columns: repeat(5, 18%);
     
@@ -100,7 +101,7 @@ body {
 
 @media only screen and (max-width: 1200px) and (min-width: 760px){
   #game-board {
-    border: 1px solid blue;
+    border: 1px solid rgb(0, 255, 55);
     display: grid;
     grid-template-columns: repeat(5, 22%);
     
@@ -110,7 +111,7 @@ body {
 
 @media only screen and (max-width: 759px) and (min-width: 500px){
   #game-board {
-    border: 1px solid blue;
+    border: 1px solid rgb(0, 255, 38);
     display: grid;
     grid-template-columns: repeat(4, 28%);
     
