@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+/**********************************
+Black Remante
+.............
+#131514 dark grey 
+#25C587 ligt greenish
+#FFFFFF white
+#4F6068 blueish grey
+----------------------------------
+White Remante
+.............
+#1A1917 black
+#269537 green 
+#777674 grey
+#FFFFFF white
+**********************************/
+
 .container{
     width: 100%;
     height: 100%;
@@ -24,11 +40,13 @@
 .bubbles span:nth-child(even){
     background-image: url('../../images/play/Remante.jpg');
     background-size: cover;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
 }
 
 .bubbles span:nth-child(odd){ 
     background-image: url('../../images/play/RemanteWhite.jpg');
     background-size: cover;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
 }
 
 @keyframes flip {
@@ -70,15 +88,15 @@ div1 {
 
 .body{
     font-family: Arial;
-    color: #8EB3F5;
+    color: #269537;
     text-align: center;
     width: 100%;
-    background: linear-gradient(to bottom, #43464d, #535559, #43464d);
+    background: linear-gradient(to bottom, #1A1917, #131514, #1A1917);
     overflow: hidden;
 }
 
 .play_btn {
-    background: radial-gradient(circle, #8EB3F5 55%, #535559 80%);
+    background: radial-gradient(circle, #25C587 55%, #269537 80%);
     border-radius: 100%;
     border-style: calc(circle);
     padding: 10px;
