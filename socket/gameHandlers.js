@@ -68,7 +68,7 @@ module.exports = {
 
     socket.on("game:start", (code) => {
       if (games[code]) {
-        games[code].start(16);
+        games[code].start(28);
       }
     });
   },
