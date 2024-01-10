@@ -27,18 +27,15 @@ h1 {
 }
 
 .bubbles span:nth-child(even){
-    background: #b4c9f0;
-    box-shadow: 0 0 0 10px #49679C,
-    0 0 50px #b4c9f0,
-    0 0 100px #b4c9f0;
+    background-image: url('../../images/play/Remante.jpg');
+    background-size: cover;
+    box-shadow: 0 0 10px #25C587, 0 0 20px #25C587, 0 0 30px #25C587, 0 0 40px #25C587;
 }
 
 .bubbles span:nth-child(odd){ 
-    background-image: url('../../images/home/memorygames.png');
-    background-size: contain;
-    box-shadow: 0 0 0 10px #49679C,
-    0 0 50px #8EB3F5,
-    0 0 100px #8EB3F5;
+    background-image: url('../../images/play/RemanteWhite.jpg');
+    background-size: cover;
+    box-shadow: 0 0 10px #25C587, 0 0 20px #25C587, 0 0 30px #25C587, 0 0 40px #25C587;
 }
 
 @keyframes flip {
@@ -52,10 +49,12 @@ h1 {
 
 /*/////////////////////////////////////////////////////////////////////////*/
 
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #43464d;
+.body{
+    font-family: Arial;
+    color: #269537;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(to bottom, #1A1917, #131514, #1A1917);
     overflow: hidden;
 }
 
@@ -70,15 +69,14 @@ body {
     font-size: 16px;
     border: none;
     width: 20%;
-    
     color: #fff;
     border: 0px solid #fff;
     cursor: initial;
     
-    
     height: 100px;
     position: relative;
 }
+
 .a1{
     
     font-size: 16px;
@@ -119,9 +117,8 @@ body {
     max-width: 200%; 
     height: auto; 
     cursor: pointer;
-    
-    
 }
+
 .a2 img {
     margin-top: 10%;
     margin-left: 220%;
@@ -129,11 +126,7 @@ body {
     max-width: 200%; 
     height: auto; 
     cursor: pointer;
-    
-    
 }
-
-
 
 @media screen {
     .a1{
