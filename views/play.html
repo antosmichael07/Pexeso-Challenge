@@ -100,7 +100,7 @@
         crossorigin="anonymous">
     </script>
     <script>
-        // Add your JavaScript game logic here
+        /*// Add your JavaScript game logic here
         var gameBoard = document.getElementById('game-board');
         var playersList = document.getElementById('players-list');
         var timer = document.getElementById('timer');
@@ -180,7 +180,7 @@
         setInterval(nextPlayer, 10000);
 
         // Start the game
-        initGame();
+        initGame();*/
     </script>
 
     <script>
@@ -188,27 +188,28 @@
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code')
 
-        let gameState = undefined;
-
         const socket = io();
+        var uniqueID = ""
+
+        socket.on("game:joinReturn", (playerCode) => {
+            if (playerCode == "gs") {
+                alert("Game already started or not found")
+                window.location.href = "/join";
+            } else {
+                uniqueID = playerCode
+            }
+        })
 
         socket.on("connect", () => {
             console.log("connected")
-            socket.emit("game:state") 
+            socket.emit("game:join", code)
         });
-        socket.on("game:updated", (state) => {
-            gameState = state
-            console.log("game:updated", state)
-        });
-        socket.on("game:card", (card) => {
-            console.log("game:card", card)
-        });
-        function startGame() {
-            socket.emit("game:start", 16)
-        }
-        function endGame() {
-            socket.emit("game:end")
-        }
+
+        socket.on("game:cardFlipped", (roomCode, cardID, cardValue) => {
+            if (roomCode == code) {
+                
+            }
+        })
     </script>
 
 

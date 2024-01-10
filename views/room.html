@@ -149,7 +149,7 @@
             }
         });
 
-        socket.emit('game:join', code)
+        socket.emit('room:join', code)
 
         // Replace with your logic to handle player list updates
         socket.on('updatePlayerList', (players) => {

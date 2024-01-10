@@ -69,30 +69,23 @@
     <script>
         var code = "";
         const socket = io();
-        var playerCode = "";
-
-        var possible = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for (var i = 0; i < 32; i++) {
-            playerCode += possible.charAt(Math.floor(Math.random() * possible.length));
-        }
         
         const idInput = document.getElementById("input");
         idInput.addEventListener("input", (e) => {
             const {value} = e.target
-            console.log(value)
             code = value
         })
 
-        socket.on("join:isGameExistReturn", (value, playerCodeFromServer) => {
+        socket.on("join:isGameExistReturn", (value) => {
             if (value == "yes") {
                 window.location.href = "/room?code=" + code;
-            } else if (playerCodeFromServer == playerCode) {
+            } else {
                 alert("Game not found");
             }
         });
         
         function clickedAPlay() {
-            socket.emit("join:isGameExist", code, playerCode);
+            socket.emit("join:isGameExist", code);
         }
     </script>
 

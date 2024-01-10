@@ -1,18 +1,16 @@
 class Pexeso {
-  #isRunning = false;
   #cards = [];
 
   constructor() {
     this.numberOfPlayersWaiting = 0;
-  }
-
-  isRunning() {
-    return this.#isRunning;
+    this.playerCodes = [];
+    this.playerTurn = 0;
+    this.isRunning = false;
   }
 
   start(numberOfCards) {
     if (numberOfCards % 2 == 0) {
-      this.#isRunning = true;
+      this.isRunning = true;
       this.#cards = this.genCards(numberOfCards);
     }
   }
