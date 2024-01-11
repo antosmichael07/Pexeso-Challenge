@@ -100,7 +100,7 @@
         crossorigin="anonymous">
     </script>
     <script>
-        // Add your JavaScript game logic here
+    /*    // Add your JavaScript game logic here
         var gameBoard = document.getElementById('game-board');
         var playersList = document.getElementById('players-list');
         var timer = document.getElementById('timer');
@@ -117,10 +117,7 @@
                 cards.push(i);
             }
 
-            // Shuffle the cards
-            cards.sort(function() {
-                return 0.5 - Math.random();
-            });
+            
 
             // Add the cards to the game board
             for (var i = 0; i < cards.length; i++) {
@@ -130,9 +127,6 @@
                 card.addEventListener('click', onCardClick);
                 gameBoard.appendChild(card);
             }
-            // Initialize players and add them to the players list
-            // Start the timer
-            // Set the current player
         }
 
         // Function to handle card click
@@ -180,7 +174,8 @@
         setInterval(nextPlayer, 10000);
 
         // Start the game
-        initGame();
+        initGame();*/
+        
     </script>
 
     <script>
@@ -207,11 +202,31 @@
 
         socket.on("game:cardFlipped", (roomCode, cardID, cardValue) => {
             if (roomCode == code) {
-                
+                console.log(roomCode, cardID, cardValue)
             }
         })
     </script>
 
+    <script>
+        var gameBoard = document.getElementById('game-board');
 
+        function initGame() {
+        
+            // Add the cards to the game board
+            for (var i = 0; i < 28; i++) {
+                var card = document.createElement('div');
+                card.className = 'card';
+                card.id = i
+                card.addEventListener('click', onCardClick);
+                gameBoard.appendChild(card);
+            }
+        }
+
+        function onCardClick(event) {
+            socket.emit("game:flipCard", Number(event.target.id), code, uniqueID)
+        }
+
+        initGame()
+    </script>
 
 </html>

@@ -6,11 +6,13 @@ class Pexeso {
     this.playerCodes = [];
     this.playerTurn = 0;
     this.isRunning = false;
+    this.score = []
+    this.goneCards = []
+    this.selectedCards = []
   }
 
   start(numberOfCards) {
     if (numberOfCards % 2 == 0) {
-      this.isRunning = true;
       this.#cards = this.genCards(numberOfCards);
     }
   }
