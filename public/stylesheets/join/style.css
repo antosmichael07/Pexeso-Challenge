@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #43464d; 
+    background-color: #1A1917;
     transition: background-color 1s ease; 
 }
 
@@ -15,17 +15,17 @@
     transform: translate(-50%, -50%);
     width: 0.001px; 
     height: 0.001px; 
-    background-color: #8EB3F5;
+    background-color: #1A1917;
     transition: all 1.2s ease;
 }
         
-
-
-body {
+.body{
+    font-family: Arial;
+    color: #269537;
+    text-align: center;
+    width: 100%;
+    background-color: #1A1917;
     overflow: hidden;
-    background: #D5DCE8;
-    display: "responsive";
-    
 }
 
 h1{
