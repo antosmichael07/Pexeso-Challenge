@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room</title>
     <link rel="stylesheet" href="stylesheets/room/style.css">
-
 </head>
 
 <body>
-
-
 
     <div class="changing-background" id="changing-background">
         <div class="growing-rectangle" id="growing-rectangle"></div>
@@ -66,7 +63,6 @@
 
     </div>
 
-
     <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
         integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
         crossorigin="anonymous"></script>
@@ -86,7 +82,6 @@
 
     </script>
 
-
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -96,7 +91,7 @@
 
 
             setTimeout(function () {
-                background.style.backgroundColor = '#8EB3F5';
+                background.style.backgroundColor = '#1A1917';
                 rectangle.style.width = '6000px';
                 rectangle.style.height = '3000px';
 
@@ -110,8 +105,6 @@
                 }, 200);
             }, 800);
         });
-
-
 
     </script>
 
@@ -129,68 +122,66 @@
 
     </script>
 
-<script>
-    var numberOfPlayers = 0
-    document.addEventListener('DOMContentLoaded', () => {
-        const socket = io(); // Connect to the Socket.IO server
+    <script>
+        var numberOfPlayers = 0
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io(); // Connect to the Socket.IO server
 
-        // Replace with your logic to handle room code
-        const urlParams = new URLSearchParams(window.location.search);
-        const code = urlParams.get('code');
-        document.getElementById('roomCode').innerText = `Your room code: ${code}`;
-        
-        socket.on("room:updatePlayerCount", (value, roomCode) => {
-            if (roomCode == code) {
-                numberOfPlayers = value
-                document.getElementById("userIcons").innerHTML = ""
-                for (let i = 0; i < numberOfPlayers; i++) {
-                    document.getElementById("userIcons").innerHTML += '<img src="images/room/user.png" class="user-icon"></img>'
+            // Replace with your logic to handle room code
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            document.getElementById('roomCode').innerText = `Your room code: ${code}`;
+            
+            socket.on("room:updatePlayerCount", (value, roomCode) => {
+                if (roomCode == code) {
+                    numberOfPlayers = value
+                    document.getElementById("userIcons").innerHTML = ""
+                    for (let i = 0; i < numberOfPlayers; i++) {
+                        document.getElementById("userIcons").innerHTML += '<img src="images/room/user.png" class="user-icon"></img>'
+                    }
                 }
-            }
-        });
-
-        socket.emit('room:join', code)
-
-        // Replace with your logic to handle player list updates
-        socket.on('updatePlayerList', (players) => {
-            const playerListContainer = document.getElementById('playerList');
-            playerListContainer.innerHTML = '';
-
-            players.forEach((player, index) => {
-                const row = playerListContainer.insertRow();
-                row.insertCell(0).textContent = index + 1; // Order
-                row.insertCell(1).textContent = player.name || 'Player'; // Name
-                row.insertCell(2).textContent = player.wins || '0'; // Wins
-                row.insertCell(3).textContent = player.games || '0'; // Games
             });
-        });
 
-        // Replace with your logic to handle player icons
-        socket.on('updatePlayerIcons', (playerIcons) => {
-            const userIconsContainer = document.querySelector('.userIcons');
-            userIconsContainer.innerHTML = '';
+            socket.emit('room:join', code)
 
-            playerIcons.forEach((iconSrc) => {
-                const img = document.createElement('img');
-                img.src = iconSrc || 'images/room/user.png'; // Default icon
-                img.classList.add('user-icon');
-                userIconsContainer.appendChild(img);
+            // Replace with your logic to handle player list updates
+            socket.on('updatePlayerList', (players) => {
+                const playerListContainer = document.getElementById('playerList');
+                playerListContainer.innerHTML = '';
+
+                players.forEach((player, index) => {
+                    const row = playerListContainer.insertRow();
+                    row.insertCell(0).textContent = index + 1; // Order
+                    row.insertCell(1).textContent = player.name || 'Player'; // Name
+                    row.insertCell(2).textContent = player.wins || '0'; // Wins
+                    row.insertCell(3).textContent = player.games || '0'; // Games
+                });
             });
+
+            // Replace with your logic to handle player icons
+            socket.on('updatePlayerIcons', (playerIcons) => {
+                const userIconsContainer = document.querySelector('.userIcons');
+                userIconsContainer.innerHTML = '';
+
+                playerIcons.forEach((iconSrc) => {
+                    const img = document.createElement('img');
+                    img.src = iconSrc || 'images/room/user.png'; // Default icon
+                    img.classList.add('user-icon');
+                    userIconsContainer.appendChild(img);
+                });
+            });
+
+            // Initial update when the page loads
+            socket.emit('getInitialData', code);
+            socket.on('initialData', (initialData) => {
+                const { players, playerIcons } = initialData;
+                socket.emit('updatePlayerList', players);
+                socket.emit('updatePlayerIcons', playerIcons);
+            });
+
         });
-
-        // Initial update when the page loads
-        socket.emit('getInitialData', code);
-        socket.on('initialData', (initialData) => {
-            const { players, playerIcons } = initialData;
-            socket.emit('updatePlayerList', players);
-            socket.emit('updatePlayerIcons', playerIcons);
-        });
-
-    });
-
-    // Other scripts...
-</script>
-
+        // Other scripts...
+    </script>
 </body>
 
 </html>

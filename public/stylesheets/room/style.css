@@ -1,9 +1,11 @@
 
-
 body {
-    margin: 0;
+    font-family: Arial;
+    color: #269537;
+    text-align: center;
+    width: 100%;
+    background-color: #1A1917;
     overflow: hidden;
-    background-color: #8EB3F5;
 }
 
 .changing-background {
@@ -12,7 +14,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #43464d; 
+    background-color: #131514; 
     transition: background-color 1s ease; 
 }
 
@@ -21,10 +23,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 0.001px; 
-    height: 0.001px; 
-    background-color: #8EB3F5;
-    transition: all 1.2s ease;
+    width: 1px; 
+    height: 1px; 
+    background-color: #1A1917;
+    transition: all 1.6s ease;
 }
 
 .additional-content {
@@ -33,11 +35,7 @@ body {
     margin-top: 5%;
     margin-left: 10%;
     justify-content: space-around;
-    
-    
-
 }
-
 
 .userIcons {
     padding-left: 0.8%;
@@ -46,12 +44,10 @@ body {
     width: 34%;
     min-height: 60vh; /* 40% of the viewport height */
     height: auto;
-    border: 5px solid rgba(180, 201, 240, 0.05);
     float: left;
     transform: translateY(-60%);
-    background-color: rgba(180, 201, 240, 0.25);
+    background-color: #b4c9f040;
     border-radius: 40px;
-    
 }
 
 .userNames {
@@ -63,15 +59,12 @@ body {
     min-height: 40vh; /* 40% of the viewport height */
     overflow-y: scroll;
     
-    
-    border: 5px solid rgba(180, 201, 240, 0.05);
     float: left;
     transform: translateY(-60%);
     background-color: rgba(180, 201, 240, 0.25);
-    border-radius: 40px;
+    border-radius: 40px 0px 0px 40px;
     font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-size: 20px;
-    
 }
 
 .roomCode {
@@ -80,10 +73,8 @@ body {
     font-size: 22px;
     font-family: Arial;
     margin-left: 100vh;
-    
-
-    
 }
+
 .user-icon {
     width: 100px;
     height: 100px;
@@ -101,13 +92,13 @@ body {
     color: black;
    
 }
+
 .playerWins {
     font-size: 22px;
     font-family: Arial;
     margin-left: 30%;
     margin-top: -26%;
     color: black;
-   
 }
 
 table.table{
@@ -146,7 +137,6 @@ table.table{
     color: #FFFFFF;
     padding: 2px 8px;
     border-radius: 5px;
-
 }
 
 /* width */
@@ -201,8 +191,12 @@ table.table{
     max-height: 10vh;
     display: flex;
     margin-top: 60vh;
-    margin-left: 100vh;
+    margin-left: 51%;
     position: absolute;
+}
+
+.aButtons:hover{
+    cursor: pointer;
 }
 
 .settings{
@@ -271,6 +265,7 @@ table.table{
     
     }
 }
+
 @media only screen and (max-width: 1030px) and (min-width: 860px){
     .aButtons{
         margin-top: 50vh;
@@ -332,7 +327,6 @@ table.table{
         margin-top: 57.5vh;
         position: absolute;
         border: none;
-    
     }
 }
 
