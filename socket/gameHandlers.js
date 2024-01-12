@@ -12,6 +12,7 @@ module.exports = {
             break
           }
         }
+        
       }
       if (games[code] && games[code].playerCodes[games[code].playerTurn] == playerCode && isCardAvailable) {
         games[code].selectedCards.push(i)
