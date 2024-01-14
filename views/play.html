@@ -185,6 +185,8 @@
 
         const socket = io();
         var uniqueID = ""
+        var flippedCards = []
+        var flippedCardsValue = []
 
         socket.on("game:joinReturn", (playerCode) => {
             if (playerCode == "gs") {
@@ -202,6 +204,23 @@
 
         socket.on("game:cardFlipped", (roomCode, cardID, cardValue) => {
             if (roomCode == code) {
+                if (flippedCards.length >= 2) {
+                    var firstCard = document.getElementById("card-" + flippedCards[0])
+                    var secondCard = document.getElementById("card-" + flippedCards[1])
+                    firstCard.className = 'card-content';
+                    secondCard.className = 'card-content';
+                    if (flippedCardsValue[0] == flippedCardsValue[1]) {
+                        document.getElementById("front-" + flippedCards[0]).style.backgroundImage = "url('images/play/testRem3.png')"
+                        document.getElementById("front-" + flippedCards[1]).style.backgroundImage = "url('images/play/testRem3.png')"
+                    }
+                    flippedCardsValue = []
+                    flippedCards = []
+                }
+                var clickedCard = document.getElementById("card-" + cardID)
+                clickedCard.className = 'card-content flip';
+                document.getElementById("back-" + cardID).style.backgroundImage = "url('images/play/cards/" + (cardValue + 1) + ".png'), url('images/play/testRem4.png')";
+                flippedCards.push(cardID)
+                flippedCardsValue.push(cardValue)
                 console.log(roomCode, cardID, cardValue)
             }
         })
@@ -214,16 +233,26 @@
         
             // Add the cards to the game board
             for (var i = 0; i < 28; i++) {
-                var card = document.createElement('div');
-                card.className = 'card';
-                card.id = i
-                card.addEventListener('click', onCardClick);
-                gameBoard.appendChild(card);
+                var card_content = document.createElement('div');
+                card_content.className = 'card-content';
+                card_content.id = "card-" + i;
+                card_content.addEventListener('click', onCardClick);
+                gameBoard.appendChild(card_content);
+
+                var card_face_front = document.createElement('div');
+                card_face_front.className = 'card-face front';
+                card_face_front.id = "front-" + i;
+                card_content.appendChild(card_face_front);
+                
+                var card_face_back = document.createElement('div');
+                card_face_back.className = 'card-face back';
+                card_face_back.id = "back-" + i;
+                card_content.appendChild(card_face_back);
             }
         }
 
         function onCardClick(event) {
-            socket.emit("game:flipCard", Number(event.target.id), code, uniqueID)
+            socket.emit("game:flipCard", Number(event.target.id.split("-")[1]), code, uniqueID)
         }
 
         initGame()

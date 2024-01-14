@@ -4,6 +4,9 @@ const { Pexeso } = require("../game/Pexeso");
 module.exports = {
   register: (io, socket) => {
     socket.on("game:flipCard", (i, code, playerCode) => {
+      if (games[code].playerCodes.length == 1) {
+        return
+      }
       var isCardAvailable = true
       if (games[code] && games[code].goneCards.length > 0) {
         for (var usedCard = 0; usedCard < games[code].goneCards.length; usedCard++) {
