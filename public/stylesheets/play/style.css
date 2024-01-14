@@ -7,14 +7,40 @@
   grid-template-columns: repeat(6, 15%);
   margin-top: 5%;
 }
-.card {
-  border: 2px solid #131514;
-  border-radius: 15%;
+
+.card-content {
   width: 14vh;
   height: 14vh;
+  perspective: 1000px;
   line-height: 50px;
   margin-top: 10px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card-content.flip {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-face.back {
+  transform: rotateY(180deg);
+  border: 2px solid #131514;
+  border-radius: 15%;
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+.card-face.front {
   background-image: url('../../images/play/testRem2.png');
+  border: 2px solid #131514;
+  border-radius: 15%;
   background-size: cover;
 }
 
@@ -42,10 +68,6 @@
   margin-top: 10px;
   background-image: url('../../images/play/testRem2.png');
   background-size: cover;
-}
-
-.card:hover {
-  background-image: url('../../images/play/testRem3.png');
 }
 
 #players-list {

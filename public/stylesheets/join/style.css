@@ -13,14 +13,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 0.001px; 
-    height: 0.001px; 
+    width: 1px; 
+    height: 1px; 
     background-color: #1A1917;
-    transition: all 1.2s ease;
+    transition: all 1.6s ease;
 }
         
 .body{
-    font-family: Arial;
     color: #269537;
     text-align: center;
     width: 100%;
@@ -31,7 +30,6 @@
 h1{
     font-size: 50px;
     font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    margin-left: 40.25%;
     margin-top: 5%;
 
 }
