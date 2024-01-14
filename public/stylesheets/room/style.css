@@ -8,6 +8,7 @@ body {
     overflow: hidden;
 }
 
+
 .changing-background {
     position: absolute;
     top: 0;
@@ -146,7 +147,7 @@ table.table{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #b4c9f0;
+    background: #EDEDED;
   }
   
   /* Handle */
@@ -169,7 +170,7 @@ table.table{
     
     display: block;
     font-family: Arial;
-    color: black;
+    color: #EDEDED;
 }
 
 .aPlay{
@@ -199,30 +200,6 @@ table.table{
     cursor: pointer;
 }
 
-.settings{
-    max-width: 10vh;
-    max-height: 10vh;
-    margin-left: 85vh;
-    margin-top: 0vh;
-    position: absolute;
-    border: none;
-
-    
-}
-
-.settings-icon{
-    display: block;
-    max-width: 10vh;
-    max-height: 10vh;
-}
-.settings-icon:hover{
-    cursor: pointer;
-}
-
-.settings-button{
-    border: none;
-    background-color: transparent;
-}
 
 @media only screen and (max-width: 600px) {
     .aButtons{
@@ -241,13 +218,7 @@ table.table{
         color:transparent;
 
     }
-    .settings{
-        margin-left: 55vh;
-        margin-top: 57.5vh;
-        position: absolute;
-        border: none;
     
-    }
 }
 
 @media only screen and (max-width: 1240px) and (min-width: 1030px){
@@ -257,13 +228,7 @@ table.table{
         position: absolute;
         
     }
-    .settings{
-        margin-left: 60vh;
-        margin-top: 0vh;
-        position: absolute;
-        border: none;
     
-    }
 }
 
 @media only screen and (max-width: 1030px) and (min-width: 860px){
@@ -273,13 +238,7 @@ table.table{
         position: absolute;
         
     }
-    .settings{
-        margin-left: 50vh;
-        margin-top: 0vh;
-        position: absolute;
-        border: none;
     
-    }
 }
 
 @media only screen and (max-width: 860px) and (min-width: 690px){
@@ -299,13 +258,7 @@ table.table{
         color:transparent;
 
     }
-    .settings{
-        margin-left: 40vh;
-        margin-top: 0vh;
-        position: absolute;
-        border: none;
     
-    }
 }
 @media only screen and (max-width: 690px) and (min-width: 600px){
     .aButtons{
@@ -322,31 +275,5 @@ table.table{
     h1{
         display:none !important;
     }
-    .settings{
-        margin-left: 50vh;
-        margin-top: 57.5vh;
-        position: absolute;
-        border: none;
-    }
-}
-
-/*.buttons{
-    margin-left: 120vh;
-    margin-top: 60vh;
-    position: relative;
-    font-family: Arial;
-    color: black;
-    display: flex;
-}
-.leaveRoom{
-    height: 10vh;
-    width: 10vh;
-    background: url('images/room/leave.png') no-repeat top left;
-    background-size: cover;
-    border: none;
     
 }
-/*.leave{
-    max-width: 10vh;
-    max-height: 10vh;
-}*/
