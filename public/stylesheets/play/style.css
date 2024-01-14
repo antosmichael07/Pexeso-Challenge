@@ -18,6 +18,32 @@
   background-size: cover;
 }
 
+.card.front {
+  background-color: #131514;
+  border-radius: 15%;
+  width: 14vh;
+  height: 14vh;
+  line-height: 50px;
+  margin-top: 10px;
+  background-image: url('../../images/play/testRem2.png');
+  background-size: cover;
+}
+
+.card-content.flip {
+  transform: rotateY(180deg);
+}
+
+.card.back {
+  background-color: #131514;
+  border-radius: 15%;
+  width: 14vh;
+  height: 14vh;
+  line-height: 50px;
+  margin-top: 10px;
+  background-image: url('../../images/play/testRem2.png');
+  background-size: cover;
+}
+
 .card:hover {
   background-image: url('../../images/play/testRem3.png');
 }
