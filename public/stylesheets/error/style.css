@@ -34,36 +34,36 @@ a {
 
 @keyframes Colorshift {
     0% {
-        color: #ff6464; /* Light Red */
+        color: #ff6464; 
     }
     10% {
-        color: #ffb469; /* Light Orange */
+        color: #ffb469; 
     }
     20% {
-        color: #ffff6e; /* Light Yellow */
+        color: #ffff6e; 
     }
     30% {
-        color: #b4ff69; /* Light Green */
+        color: #b4ff69; 
     }
     40% {
-        color: #6effb6; /* Lighter Green-Blue */
+        color: #6effb6;
     }
     50% {
-        color: #66ffff; /* Light Cyan */
+        color: #66ffff; 
     }
     60% {
-        color: #5daeff; /* Light Blue */
+        color: #5daeff; 
     }
     70% {
-        color: #6666ff; /* Lighter Blue */
+        color: #6666ff; 
     }
     80% {
-        color: #ab56ff; /* Light Indigo */
+        color: #ab56ff; 
     }
     90% {
-        color: #ff56ff; /* Light Violet */
+        color: #ff56ff; 
     }
     100% {
-        color: #ff6767; /* Light Red */
+        color: #ff6767; 
     }
 }

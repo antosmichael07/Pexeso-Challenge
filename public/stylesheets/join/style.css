@@ -47,7 +47,7 @@ h1{
 }
 
 .additional-content {
-    display: none; /* Initially hidden */
+    display: none;
     position: relative;
     
 }

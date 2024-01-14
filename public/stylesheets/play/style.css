@@ -1,7 +1,7 @@
 
 
 #game-board {
-  border: 1px solid rgb(0, 255, 4);
+  
   display: grid;
   grid-template-columns: repeat(6, 15%);
   margin-top: 5%;
@@ -71,15 +71,10 @@
 
 #players-list {
   width: 550PX;
-  border: 1px solid rgb(247, 247, 247);
-  border-radius: 50px;
-  
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  
   text-align: center;
   font-size: 30px;
-  
 }
 
 body {
@@ -95,9 +90,9 @@ body {
 }
 
 #timer {
-  width: 500px; /* adjust as needed */
-  height: 25px; /* adjust as needed */
-  border: 1px solid black; /* adjust as needed */
+  width: 500px; 
+  height: 25px; 
+  border: 1px solid black;
   border-radius: 100px;
   margin-bottom: 1px;
   margin-left: 4%;
@@ -118,7 +113,7 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  background: #24C586; /* change color as needed */
+  background: #24C586; 
 
 }
 

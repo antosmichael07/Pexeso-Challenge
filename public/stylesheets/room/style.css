@@ -140,34 +140,31 @@ table.table{
     border-radius: 5px;
 }
 
-/* width */
+
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: #EDEDED;
-  }
+}
   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
     background: #6990d2;    
-  }
+}
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  
+::-webkit-scrollbar-thumb:hover {
     background: #49679C;
-  }
+}
   
 .headers{
-    display: flex;
-    
+    display: flex;    
 }
 
 .yourRoom{
     margin-left: 10vh;
-    
     display: block;
     font-family: Arial;
     color: #EDEDED;
@@ -176,7 +173,6 @@ table.table{
 .aPlay{
     max-width: 10vh;
     max-height: 10vh;
-
 }
 
 .aLeave{
@@ -184,7 +180,6 @@ table.table{
     max-height: 10vh;
     margin-left: 40vh;
     margin-bottom: 20vh;
-    
 }
 
 .aButtons{

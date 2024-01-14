@@ -21,13 +21,9 @@
             <h3 class="roomCode" id="roomCode">Your room code:</h3>
         </div>
 
-        <div class="userIcons" id="userIcons">
-            
-
-        </div>
+        <div class="userIcons" id="userIcons"></div>
 
         <div class="right">
-
             <div class="userNames" id="userNames">
                 <div class="tableClass">
 
@@ -52,7 +48,6 @@
                 <a href="/choose" class="aLeave">
                     <img src="images/room/leave.png" class="leave-icon"></img>
                 </a>
-
             </div>
         </div>
         <!--
@@ -69,7 +64,6 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // Adjust the height of the container based on the table content
         function adjustContainerHeight() {
             var container = document.getElementById('userNames');
             var tableHeight = document.getElementById('tableClass');
@@ -79,8 +73,6 @@
 
         // Call the function when the page loads or whenever the content changes
         window.addEventListener('load', adjustContainerHeight);
-        /*i wanna kms this shi difficult*/
-
     </script>
 
     <script>
@@ -106,11 +98,9 @@
                 }, 200);
             }, 800);
         });
-
     </script>
 
     <script>
-
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code')
 
@@ -120,7 +110,6 @@
         function clickedAPlay() {
             window.location.href = "/play?code=" + code;
         }
-
     </script>
 
     <script>
@@ -128,7 +117,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const socket = io(); // Connect to the Socket.IO server
 
-            // Replace with your logic to handle room code
             const urlParams = new URLSearchParams(window.location.search);
             const code = urlParams.get('code');
             document.getElementById('roomCode').innerText = `Your room code: ${code}`;
@@ -145,7 +133,7 @@
 
             socket.emit('room:join', code)
 
-            // Replace with your logic to handle player list updates
+            // Handle player list updates
             socket.on('updatePlayerList', (players) => {
                 const playerListContainer = document.getElementById('playerList');
                 playerListContainer.innerHTML = '';
@@ -159,30 +147,14 @@
                 });
             });
 
-            // Replace with your logic to handle player icons
-            socket.on('updatePlayerIcons', (playerIcons) => {
-                const userIconsContainer = document.querySelector('.userIcons');
-                userIconsContainer.innerHTML = '';
-
-                playerIcons.forEach((iconSrc) => {
-                    const img = document.createElement('img');
-                    img.src = iconSrc || 'images/room/user.png'; // Default icon
-                    img.classList.add('user-icon');
-                    userIconsContainer.appendChild(img);
-                });
-            });
-
             // Initial update when the page loads
             socket.emit('getInitialData', code);
             socket.on('initialData', (initialData) => {
                 const { players, playerIcons } = initialData;
                 socket.emit('updatePlayerList', players);
-                socket.emit('updatePlayerIcons', playerIcons);
             });
 
         });
-        // Other scripts...
     </script>
 </body>
-
 </html>
