@@ -254,6 +254,13 @@
             document.getElementById(whoIsPlaying).style.color = "#E18818"
             }
         })
+
+        function imStillHere() {
+            socket.emit("game:imStillHere", code)
+            setTimeout(imStillHere, 20000)
+        }
+        
+        imStillHere()
     </script>
 
 </html>

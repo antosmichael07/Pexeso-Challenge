@@ -126,27 +126,6 @@
 
             socket.emit('room:join', code)
 
-            // Handle player list updates
-            socket.on('updatePlayerList', (players) => {
-                const playerListContainer = document.getElementById('playerList');
-                playerListContainer.innerHTML = '';
-
-                players.forEach((player, index) => {
-                    const row = playerListContainer.insertRow();
-                    row.insertCell(0).textContent = index + 1; // Order
-                    row.insertCell(1).textContent = player.name || 'Player'; // Name
-                    row.insertCell(2).textContent = player.wins || '0'; // Wins
-                    row.insertCell(3).textContent = player.games || '0'; // Games
-                });
-            });
-
-            // Initial update when the page loads
-            socket.emit('getInitialData', code);
-            socket.on('initialData', (initialData) => {
-                const { players, playerIcons } = initialData;
-                socket.emit('updatePlayerList', players);
-            });
-
             socket.on("room:gameIsStarting", (roomCode) => {
                 if (roomCode == code) {
                     window.location.href = "/play?code=" + code;
@@ -157,6 +136,13 @@
             socket.emit("room:startNow", code)
             window.location.href = "/play?code=" + code;
         }
+
+        function imStillHere() {
+            socket.emit("game:imStillHere", code)
+            setTimeout(imStillHere, 20000)
+        }
+
+        imStillHere()
     </script>
 </body>
 </html>

@@ -77,6 +77,7 @@ module.exports = {
         }
       } while (games[code])
       games[code] = new Pexeso();
+      games[code].checkPlayerDisconnect(games, code)
       socket.emit("game:code", code);
     });
 
@@ -104,6 +105,12 @@ module.exports = {
         socket.emit("game:joinReturn", playerCode);
       } else {
         socket.emit("game:joinReturn", "gs");
+      }
+    })
+
+    socket.on("game:imStillHere", (code) => {
+      if (games[code]) {
+        games[code].timesDC++
       }
     })
   },

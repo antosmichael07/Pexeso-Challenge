@@ -10,6 +10,19 @@ class Pexeso {
     this.goneCards = []
     this.selectedCards = []
     this.playerNames = []
+    this.timesDC = 0
+    this.lastTimesDC = 0
+    this.skipDC = 1
+  }
+
+  checkPlayerDisconnect(gamesObject, code) {
+    if (gamesObject[code].lastTimesDC == gamesObject[code].timesDC && gamesObject[code].skipDC == 0) {
+      delete gamesObject[code]
+      return
+    }
+    gamesObject[code].skipDC = 0
+    gamesObject[code].lastTimesDC = gamesObject[code].timesDC
+    setTimeout(gamesObject[code].checkPlayerDisconnect, 60000, gamesObject, code)
   }
 
   start(numberOfCards) {
