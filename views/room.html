@@ -106,19 +106,12 @@
 
         var roomCodeHTML = document.getElementById("roomCode")
         roomCodeHTML.innerText = "Your room code: " + code
-
-        function clickedAPlay() {
-            window.location.href = "/play?code=" + code;
-        }
     </script>
 
     <script>
         var numberOfPlayers = 0
-        document.addEventListener('DOMContentLoaded', () => {
-            const socket = io(); // Connect to the Socket.IO server
-
-            const urlParams = new URLSearchParams(window.location.search);
-            const code = urlParams.get('code');
+        const socket = io(); // Connect to the Socket.IO server
+        
             document.getElementById('roomCode').innerText = `Your room code: ${code}`;
             
             socket.on("room:updatePlayerCount", (value, roomCode) => {
@@ -154,7 +147,16 @@
                 socket.emit('updatePlayerList', players);
             });
 
-        });
+            socket.on("room:gameIsStarting", (roomCode) => {
+                if (roomCode == code) {
+                    window.location.href = "/play?code=" + code;
+                }
+            })
+        
+        function clickedAPlay() {
+            socket.emit("room:startNow", code)
+            window.location.href = "/play?code=" + code;
+        }
     </script>
 </body>
 </html>

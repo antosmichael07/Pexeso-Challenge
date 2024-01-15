@@ -9,6 +9,7 @@ class Pexeso {
     this.score = []
     this.goneCards = []
     this.selectedCards = []
+    this.playerNames = []
   }
 
   start(numberOfCards) {

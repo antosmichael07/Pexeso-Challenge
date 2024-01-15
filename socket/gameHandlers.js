@@ -36,11 +36,6 @@ module.exports = {
           games[code].score[games[code].playerTurn]++
           console.log(games[code])
         }
-        io.emit("game:cardFlipped", code, i, games[code].returnCard(i));
-        if (games[code].goneCards.length >= 28) {
-          delete games[code]
-          return
-        }
         if (games[code].selectedCards.length >= 2) {
           if (games[code].playerCodes.length == games[code].playerTurn + 1) {
             games[code].playerTurn = 0;
@@ -49,8 +44,15 @@ module.exports = {
           }
           games[code].selectedCards = []
         }
+        io.emit("game:cardFlipped", code, i, games[code].returnCard(i), games[code].playerNames[games[code].playerTurn]);
       }
     });
+
+    socket.on("room:startNow", (code) => {
+      if (games[code]) {
+        io.emit("room:gameIsStarting", code)
+      }
+    })
 
     socket.on("room:join", (code) => {
       if (games[code]) {
@@ -80,8 +82,10 @@ module.exports = {
       socket.emit("game:code", code);
     });
 
-    socket.on("game:join", (code) => {
+    socket.on("game:join", (code, name) => {
       if (games[code] && !games[code].isRunning) {
+        games[code].playerNames.push(String(name))
+
         var possible = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var playerCode = "";
         var continueLoop = false;
@@ -97,6 +101,7 @@ module.exports = {
           }
         } while (continueLoop)
         games[code].playerCodes.push(playerCode);
+        io.emit("game:playerNameList", code, games[code].playerNames, games[code].playerNames[games[code].playerTurn])
         socket.emit("game:joinReturn", playerCode);
       } else {
         socket.emit("game:joinReturn", "gs");
