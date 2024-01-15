@@ -25,15 +25,13 @@ module.exports = {
         }
         if (!games[code].isRunning) {
           games[code].isRunning = true;
-          for (var players = 0; players < games[code].playerCodes; players++) {
-            games[code].score.push(0)
-          }
           games[code].start(28)
         }
         if (games[code].selectedCards.length >= 2 && games[code].returnCard(games[code].selectedCards[0]) == games[code].returnCard(games[code].selectedCards[1])) {
           games[code].goneCards.push(games[code].selectedCards[0])
           games[code].goneCards.push(games[code].selectedCards[1])
-          games[code].score[games[code].playerTurn]++
+          games[code].playerScores[games[code].playerTurn]++
+          io.emit("game:playerNameList", code, games[code].playerNames, games[code].playerNames[games[code].playerTurn], games[code].playerScores)
           console.log(games[code])
         }
         if (games[code].selectedCards.length >= 2) {
@@ -101,7 +99,8 @@ module.exports = {
           }
         } while (continueLoop)
         games[code].playerCodes.push(playerCode);
-        io.emit("game:playerNameList", code, games[code].playerNames, games[code].playerNames[games[code].playerTurn])
+        games[code].playerScores.push(0)
+        io.emit("game:playerNameList", code, games[code].playerNames, games[code].playerNames[games[code].playerTurn], games[code].playerScores)
         socket.emit("game:joinReturn", playerCode);
       } else {
         socket.emit("game:joinReturn", "gs");

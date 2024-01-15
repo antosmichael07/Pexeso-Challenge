@@ -6,7 +6,7 @@ class Pexeso {
     this.playerCodes = [];
     this.playerTurn = 0;
     this.isRunning = false;
-    this.score = []
+    this.playerScores = []
     this.goneCards = []
     this.selectedCards = []
     this.playerNames = []

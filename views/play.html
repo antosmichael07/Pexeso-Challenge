@@ -243,12 +243,12 @@
             }
         })
 
-        socket.on("game:playerNameList", (roomCode, nameArray, whoIsPlaying) => {
+        socket.on("game:playerNameList", (roomCode, nameArray, whoIsPlaying, playerScores) => {
             if (roomCode == code) {
             playerNameList = nameArray
             var htmlInPlayerList = ""
             for (var i = 0; i < nameArray.length; i++) {
-                htmlInPlayerList += '<div id="' + nameArray[i] + '">' + nameArray[i] + "</div>"
+                htmlInPlayerList += '<div id="' + nameArray[i] + '">' + nameArray[i] + " - " + playerScores[i] + "</div>"
             }
             document.getElementById("players-list").innerHTML = htmlInPlayerList
             document.getElementById(whoIsPlaying).style.color = "#E18818"
