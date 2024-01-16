@@ -58,12 +58,11 @@ body {
     width: 34%;
     max-height: 40vh;
     min-height: 40vh; /* 40% of the viewport height */
-    overflow-y: scroll;
     
     float: left;
     transform: translateY(-60%);
     background-color: rgba(180, 201, 240, 0.25);
-    border-radius: 40px 0px 0px 40px;
+    border-radius: 40px;
     font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }

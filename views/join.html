@@ -28,33 +28,14 @@
             </div>
         </div>
     </div>
-    
-
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var background = document.getElementById('changing-background');
-            var rectangle = document.getElementById('growing-rectangle');
-            var additionalContent = document.getElementById('additional-content');
-
-            setTimeout(function () {
-                background.style.backgroundColor = '#131514';
-                rectangle.style.width = '200%';
-                rectangle.style.height = '200%';
-
-                setTimeout(function () {
-                    additionalContent.style.display = "block";
-                }, 200);
-            }, 800);
-        });
-    </script>
 
     <script 
     src="https://cdn.socket.io/4.6.0/socket.io.min.js"
     integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
     crossorigin="anonymous">
     </script>
-    <script src="public\javascripts\join\script.js"></script>
+    <script src="javascripts\join\growingRect.js"></script>
+    <script src="javascripts\join\script.js"></script>
 
 </body>
 </html>
