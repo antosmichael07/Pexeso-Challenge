@@ -41,7 +41,7 @@ socket.on("game:cardFlipped", (roomCode, cardID, cardValue, playerTurn) => {
         flippedCards.push(cardID)
         flippedCardsValue.push(cardValue)
         for (var i = 0; i < playerNameList.length; i++) {
-            document.getElementById(playerNameList[i]).style.color = "#212529"
+            document.getElementById(playerNameList[i]).style.color = "#ffffff"
         }
         document.getElementById(playerTurn).style.color = "#E18818"
     }
