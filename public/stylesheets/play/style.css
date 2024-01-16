@@ -70,15 +70,18 @@
 }
 
 #players-list {
+  border: #24C586 2px solid;
+  border-radius: 10px;
   width: 550PX;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   text-align: center;
   font-size: 30px;
+  color: #fff;
 }
 
 body {
-  background-color: #506069;
+  background: linear-gradient(to bottom, #1A1917, #131514, #1A1917);
   font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
   overflow-x: hidden;
 }
@@ -90,6 +93,8 @@ body {
 }
 
 #timer {
+  visibility: hidden;
+
   width: 500px; 
   height: 25px; 
   border: 1px solid black;
@@ -123,7 +128,6 @@ body {
 
 @media only screen and (min-width: 1280px){
   #game-board {
-    border: 1px solid rgb(26, 255, 0);
     display: grid;
     grid-template-columns: repeat(7, 15%);
     
@@ -133,7 +137,6 @@ body {
 
 @media only screen and (max-width: 1200px) and (min-width: 1000px){
   #game-board {
-    border: 1px solid rgb(0, 255, 38);
     display: grid;
     grid-template-columns: repeat(5, 18%);
     
@@ -143,7 +146,6 @@ body {
 
 @media only screen and (max-width: 1200px) and (min-width: 760px){
   #game-board {
-    border: 1px solid rgb(0, 255, 55);
     display: grid;
     grid-template-columns: repeat(5, 22%);
     
@@ -153,7 +155,6 @@ body {
 
 @media only screen and (max-width: 759px) and (min-width: 500px){
   #game-board {
-    border: 1px solid rgb(0, 255, 38);
     display: grid;
     grid-template-columns: repeat(4, 28%);
     

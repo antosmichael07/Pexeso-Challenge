@@ -54,29 +54,7 @@
     integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
     crossorigin="anonymous">
     </script>
-
-    <script>
-        var code = "";
-        const socket = io();
-        
-        const idInput = document.getElementById("input");
-        idInput.addEventListener("input", (e) => {
-            const {value} = e.target
-            code = value
-        })
-
-        socket.on("join:isGameExistReturn", (value) => {
-            if (value == "yes") {
-                window.location.href = "/room?code=" + code;
-            } else {
-                alert("Game not found");
-            }
-        });
-        
-        function clickedAPlay() {
-            socket.emit("join:isGameExist", code);
-        }
-    </script>
+    <script src="public\javascripts\join\script.js"></script>
 
 </body>
 </html>
