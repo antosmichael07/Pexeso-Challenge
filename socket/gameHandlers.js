@@ -19,6 +19,7 @@ module.exports = {
       }
       if (games[code] && games[code].playerCodes[games[code].playerTurn] == playerCode && isCardAvailable) {
         games[code].selectedCards.push(i)
+        var isCardAPair = false
         if (games[code].selectedCards[0] && games[code].selectedCards[1] && games[code].selectedCards[0] == games[code].selectedCards[1]) {
           games[code].selectedCards = [games[code].selectedCards[0]]
           return
@@ -30,15 +31,18 @@ module.exports = {
         if (games[code].selectedCards.length >= 2 && games[code].returnCard(games[code].selectedCards[0]) == games[code].returnCard(games[code].selectedCards[1])) {
           games[code].goneCards.push(games[code].selectedCards[0])
           games[code].goneCards.push(games[code].selectedCards[1])
+          isCardAPair = true
           games[code].playerScores[games[code].playerTurn]++
           io.emit("game:playerNameList", code, games[code].playerNames, games[code].playerNames[games[code].playerTurn], games[code].playerScores)
           console.log(games[code])
         }
         if (games[code].selectedCards.length >= 2) {
-          if (games[code].playerCodes.length == games[code].playerTurn + 1) {
-            games[code].playerTurn = 0;
-          } else {
-            games[code].playerTurn++;
+          if (!isCardAPair) {
+            if (games[code].playerCodes.length == games[code].playerTurn + 1) {
+              games[code].playerTurn = 0;
+            } else {
+              games[code].playerTurn++;
+            }
           }
           games[code].selectedCards = []
         }
